@@ -3,6 +3,7 @@ QSpinBox#digital-entry {
     padding: 5px;
     color: #1A3B5D;
     border: 1px solid #adb5bd; 
+    background-color: #ffffff;
     border-radius: 6px; 
 }
 

@@ -13,7 +13,6 @@ QComboBox#drop-down-menu:hover {
 }
 
 QComboBox::down-arrow {
-    /* image: url(modernqqt/resources/ui/angle-down.png); */
     width: 10px;
 }
 
