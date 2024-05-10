@@ -1,0 +1,14 @@
+QRadioButton#radio-button {
+    color: #000000;
+    outline: none;
+    padding: 3px;
+}
+
+QRadioButton#radio-button::indicator {
+    border-radius: 7px;
+    border: 1px solid #0166fc;
+}
+
+QRadioButton#radio-button::indicator:checked {
+    background-color: #0166fc;
+}

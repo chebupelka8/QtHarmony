@@ -1,0 +1,16 @@
+QLineEdit#entry {
+    outline: none;
+    background-color: #ffffff;
+    padding: 5px;
+    color: #1A3B5D;
+    border: 1px solid #adb5bd; /* CED6E0 */
+    border-radius: 6px;   
+}
+
+QLineEdit#entry:hover {
+    border-color: #6185DF;
+}
+
+QLineEdit#entry:focus {
+    border-color: #405cf5;
+}

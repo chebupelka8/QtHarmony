@@ -1,0 +1,15 @@
+QSpinBox#digital-entry {
+    outline: none;
+    padding: 5px;
+    color: #1A3B5D;
+    border: 1px solid #adb5bd; 
+    border-radius: 6px; 
+}
+
+QSpinBox#digital-entry:hover {
+    border-color: #6185DF;
+}
+
+QSpinBox#digital-entry:focus {
+    border-color: #405cf5;
+}

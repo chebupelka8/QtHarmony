@@ -1,0 +1,7 @@
+QGroupBox#group-box {
+    color: #000000;
+    background-color: #f3f3f3;
+    border-radius: 6px;
+    border: none;
+    padding: 3px;
+}

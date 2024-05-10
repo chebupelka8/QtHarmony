@@ -1,0 +1,28 @@
+QComboBox#drop-down-menu {
+    outline: none;
+    padding: 2px;
+    padding-left: 5px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #1A3B5D;
+    border: 1px solid #adb5bd;
+}
+
+QComboBox#drop-down-menu:hover {
+    border-color: #6185DF;
+}
+
+QComboBox::down-arrow {
+    image: url(src/ui/angle-down.png);
+    width: 10px;
+}
+
+QComboBox#drop-down-menu QAbstractItemView {
+    padding: 0;
+    background-color: #ffffff;
+    color: white;
+}
+
+QComboBox#drop-down-menu::drop-down {
+    border: none;
+}

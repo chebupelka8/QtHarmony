@@ -1,0 +1,19 @@
+QListWidget#widget-list {
+    outline: none;
+    border-radius: 6px;
+    padding: 3px;
+    border: 1px solid gray;
+}
+
+QWidget#item {
+    border: 1px solid gray;
+    padding: 0;
+    height: 40px;
+    border-radius: 6px;
+    padding: 3px;
+}
+
+QWidget#item:hover {
+    background-color: #deeaff;
+    color: #0166fc;
+}

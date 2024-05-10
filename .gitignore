@@ -1,0 +1,13 @@
+.venv/
+.git/
+.vscode/
+
+test.py
+ModernQt.egg-info/
+dist/
+
+load_to_pypi.sh
+pypi_clear.sh
+
+__pycache__/
+**/__pycache__/
