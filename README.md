@@ -6,10 +6,10 @@
 <p align="center">
 
   <img alt="PyPI - Version" src="https://img.shields.io/pypi/v/ModernQQt">
-  <img src="https://img.shields.io/github/license/chebupelka8/ModernQt">
-  <img src="https://img.shields.io/github/commit-activity/t/chebupelka8/ModernQt"> 
-  <img src="https://img.shields.io/github/stars/chebupelka8/ModernQt">
-  <img src="https://img.shields.io/github/watchers/chebupelka8/ModernQt">
+  <img src="https://img.shields.io/github/license/chebupelka8/ModernQQt">
+  <img src="https://img.shields.io/github/commit-activity/t/chebupelka8/ModernQQt"> 
+  <img src="https://img.shields.io/github/stars/chebupelka8/ModernQQt">
+  <img src="https://img.shields.io/github/watchers/chebupelka8/ModernQQt">
   
 </p>
 
