@@ -22,9 +22,30 @@ pip install ModernQQt
 ```
 
 ```python
-from modernqqt.widgets import PushButton
+from modernqqt.constructor import Initialization
+from modernqqt.widgets import ...
 ...
 ```
 
-<h3>Example</h3>
-<img src="example.png">
+<h3>Examples</h3>
+<h4>Basic screen</h4>
+
+```python
+from modernqqt.constructor import Initialization
+from modernqqt.windows import MainWindow
+
+import sys
+
+
+Initialization.init(sys.argv)
+
+
+if __name__ == "__main__":
+    window = MainWindow(title="Hello", size=(600, 400))
+    window.show()
+
+    Initialization.exec()
+
+```
+
+<img src="examples/basic_screen/basic_screen.png">

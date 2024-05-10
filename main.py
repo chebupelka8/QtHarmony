@@ -1,23 +1,20 @@
 from PySide6.QtWidgets import (
-    QApplication, QWidget, QHBoxLayout, QLabel
+    QWidget, QHBoxLayout
 )
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QIcon
 
 import sys
 
 from modernqqt.widgets import *
-# from src.core import Font
+from modernqqt.windows import MainWindow
+from modernqqt.constructor import Initialization
+
+Initialization.init(sys.argv)
 
 
-class MainWindow(QWidget):
+class Window(QWidget):
     def __init__(self) -> None:
         super().__init__()
 
-        self.setWindowIcon(QIcon("Icon.png"))
-        self.setWindowTitle("ModernQt")
-
-        self.resize(1000, 600)
         self.setStyleSheet("background-color: #fbfbfb")
 
         self.widgetsList = WidgetsList()
@@ -29,9 +26,7 @@ class MainWindow(QWidget):
 
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-
-    window = MainWindow()
+    window = MainWindow(Window())
     window.show()
 
-    app.exec()
+    Initialization.exec()
