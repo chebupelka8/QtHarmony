@@ -19,6 +19,7 @@ class Window(QWidget):
 
         self.mainLayout = QHBoxLayout()
         self.mainLayout.addWidget(PushButton("Button"))
+        self.mainLayout.addWidget(DropDownMenu([str(i) for i in range(100)]))
 
         self.setLayout(self.mainLayout)
 
