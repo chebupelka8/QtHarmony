@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import QPushButton
 from PySide6.QtCore import QSize
 
-from modernqqt.src.core import Loader
+from modernqqt.src.core import Loader, StyleSheetLoader
 
 from typing import Optional, TYPE_CHECKING
 
@@ -26,15 +26,11 @@ class PushButton(QPushButton):
 
         if font is not None: self.setFont(font)
 
-        stylesheet_path = os.path.join(os.path.dirname(__file__), "styles/button.css")
-
-        if stylesheet is not None:
-            self.setStyleSheet(
-                Loader.load_file(stylesheet_path) + "\n" 
-                + stylesheet.replace("PushButton", "QPushButton#button")
-            )
-        else:
-            self.setStyleSheet(Loader.load_file(stylesheet_path))
+        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+            __file__, "styles/button.css", 
+            name="PushButton", obj_name="QPushButton#button",
+            stylesheet=stylesheet
+        ))
         
         self.setObjectName("button")
         self.setMinimumSize(QSize(*size))

@@ -15,8 +15,6 @@ class Window(QWidget):
     def __init__(self) -> None:
         super().__init__()
 
-        self.setStyleSheet("background-color: #fbfbfb")
-
         self.widgetsList = WidgetsList()
 
         self.mainLayout = QHBoxLayout()

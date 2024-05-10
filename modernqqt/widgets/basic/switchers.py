@@ -8,7 +8,7 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import Qt, QSize
 
-from modernqqt.src.core import Loader, FileDialog, Font
+from modernqqt.src.core import Loader, FileDialog, StyleSheetLoader
 from .button import PushButton
 
 from typing import Optional, TYPE_CHECKING
@@ -37,16 +37,11 @@ class Splitter(QSplitter):
         elif __orientation == "vertical": super().__init__(Qt.Orientation.Vertical, parent)
 
         self.setObjectName("splitter")
-
-        stylesheet_path = os.path.join(os.path.dirname(__file__), "styles/splitter.css")
-
-        if stylesheet is not None:
-            self.setStyleSheet(
-                Loader.load_file(stylesheet_path) + "\n" 
-                + stylesheet.replace("Splitter", "QSplitter#splitter")
-            )
-        else:
-            self.setStyleSheet(Loader.load_file(stylesheet_path))
+        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+            __file__, "styles/splitter.css", 
+            name="Splitter", obj_name="QSplitter#splitter",
+            stylesheet=stylesheet
+        ))
 
     def addWidget(self, widget):
         super().addWidget(widget)
@@ -82,15 +77,11 @@ class DropDownMenu(QComboBox):
         self.setObjectName("drop-down-menu")
         if font is not None: self.setFont(font)
 
-        stylesheet_path = os.path.join(os.path.dirname(__file__), "styles/drop_down_menu.css")
-
-        if stylesheet is not None:
-            self.setStyleSheet(
-                Loader.load_file(stylesheet_path) + "\n" 
-                + stylesheet.replace("DropDownMenu", "QComboBox#drop-down-menu")
-            )
-        else:
-            self.setStyleSheet(Loader.load_file(stylesheet_path))
+        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+            __file__, "styles/drop_down_menu.css", 
+            name="DropDownMenu", obj_name="QComboBox#drop-down-menu",
+            stylesheet=stylesheet
+        ))
 
     def set_items(self, *__values: str) -> None:
         self.__values = [*__values]
@@ -125,15 +116,11 @@ class Entry(QLineEdit):
         self.setObjectName("entry")
         self.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
 
-        stylesheet_path = os.path.join(os.path.dirname(__file__), "styles/entry.css")
-
-        if stylesheet is not None:
-            self.setStyleSheet(
-                Loader.load_file(stylesheet_path) + "\n" 
-                + stylesheet.replace("Entry", "QLineEdit#entry")
-            )
-        else:
-            self.setStyleSheet(Loader.load_file(stylesheet_path))
+        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+            __file__, "styles/entry.css", 
+            name="Entry", obj_name="QLineEdit#entry",
+            stylesheet=stylesheet
+        ))
 
 
 class DigitalEntry(QSpinBox):
@@ -163,15 +150,11 @@ class DigitalEntry(QSpinBox):
         self.setObjectName("digital-entry")
         self.setRange(*range)
 
-        stylesheet_path = os.path.join(os.path.dirname(__file__), "styles/digital_entry.css")
-
-        if stylesheet is not None:
-            self.setStyleSheet(
-                Loader.load_file(stylesheet_path) + "\n" 
-                + stylesheet.replace("DigitalEntry", "QSpinBox#digital-entry")
-            )
-        else:
-            self.setStyleSheet(Loader.load_file(stylesheet_path))
+        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+            __file__, "styles/digital_entry.css", 
+            name="DigitalEntry", obj_name="QSpinBox#digital-entry",
+            stylesheet=stylesheet
+        ))
 
 
 class CheckBox(QCheckBox):
@@ -197,15 +180,11 @@ class CheckBox(QCheckBox):
         if text is not None:
             self.setText(text)
         
-        stylesheet_path = os.path.join(os.path.dirname(__file__), "styles/check_box.css")
-
-        if stylesheet is not None:
-            self.setStyleSheet(
-                Loader.load_file(stylesheet_path) + "\n" 
-                + stylesheet.replace("CheckBox", "CheckBox#check-box")
-            )
-        else:
-            self.setStyleSheet(Loader.load_file(stylesheet_path))
+        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+            __file__, "styles/check_box.css", 
+            name="CheckBox", obj_name="CheckBox#check-box",
+            stylesheet=stylesheet
+        ))
 
 
 class PathEntry(QWidget):
@@ -235,16 +214,12 @@ class PathEntry(QWidget):
 
         self.setObjectName("path-entry")
         if font is not None: self.setFont(font)
-        
-        stylesheet_path = os.path.join(os.path.dirname(__file__), "styles/path_entry.css")
 
-        if stylesheet is not None:
-            self.setStyleSheet(
-                Loader.load_file(stylesheet_path) + "\n" 
-                + stylesheet.replace("PathEntry", "QLineEdit#path-entry")
-            )
-        else:
-            self.setStyleSheet(Loader.load_file(stylesheet_path))
+        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+            __file__, "styles/path_entry.css", 
+            name="PathEntry", obj_name="QLineEdit#path-entry",
+            stylesheet=stylesheet
+        ))
 
         self.mainLayout = QHBoxLayout()
 
@@ -286,12 +261,8 @@ class RadioButton(QRadioButton):
         self.setFixedSize(QSize(*size))
 
         self.setObjectName("radio-button")
-        stylesheet_path = os.path.join(os.path.dirname(__file__), "styles/radio_button.css")
-
-        if stylesheet is not None:
-            self.setStyleSheet(
-                Loader.load_file(stylesheet_path) + "\n" 
-                + stylesheet.replace("RadioButton", "QRadioButton#radio-button")
-            )
-        else:
-            self.setStyleSheet(Loader.load_file(stylesheet_path))
+        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+            __file__, "styles/radio_button.css", 
+            name="RadioButton", obj_name="QRadioButton#radio-button",
+            stylesheet=stylesheet
+        ))

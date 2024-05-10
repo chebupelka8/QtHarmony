@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QMainWindow, QWidget, QApplication
 
-from modernqqt.src.core import Loader
+from modernqqt.src.core import Loader, StyleSheetLoader
 
 from typing import Optional
 import os.path
@@ -20,6 +20,13 @@ class MainWindow(QMainWindow):
         super().__init__(parent)
 
         if widget is not None: self.setCentralWidget(widget)
+        
+        self.setObjectName("main-window")
+        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+            __file__, "styles/main_window.css", 
+            name="MainWindow", obj_name="QMainWindow#main-window",
+            stylesheet=stylesheet
+        ))
 
         self.resize(*size)
         if title is not None: self.setWindowTitle(title)

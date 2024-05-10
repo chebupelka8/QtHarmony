@@ -4,7 +4,7 @@ from PySide6.QtWidgets import (
     QGroupBox, QButtonGroup
 )
 
-from modernqqt.src.core import Loader
+from modernqqt.src.core import Loader, StyleSheetLoader
 
 import os.path
 
@@ -23,15 +23,10 @@ class GroupBox(QGroupBox):
         super().__init__(parent)
 
         self.setObjectName("group-box")
-        stylesheet_path = os.path.join(os.path.dirname(__file__), "styles/group_box.css")
-
-        if stylesheet is not None:
-            self.setStyleSheet(
-                Loader.load_file(stylesheet_path) + "\n" 
-                + stylesheet.replace("GroupBox", "QGroupBox#group-box")
-            )
-        else:
-            self.setStyleSheet(Loader.load_file(stylesheet_path))
-
+        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+            __file__, "styles/group_box.css", 
+            name="GroupBox", obj_name="QGroupBox#group-box",
+            stylesheet=stylesheet
+        ))
 
         if title is not None: self.setTitle(title)

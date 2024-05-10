@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import QApplication
 
 from typing import Optional
+from modernqqt.src.core.exceptions import NotInitializedError
 
 
 class Initialization:
@@ -17,4 +18,4 @@ class Initialization:
             cls.application.exec()
         
         else:
-            raise ValueError("Intialize application use: 'Initialization.init()'")
+            raise NotInitializedError("Intialize application use: 'Initialization.init()'")
