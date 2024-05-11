@@ -4,6 +4,8 @@ from PySide6.QtGui import QIcon
 from qtharmony.src.core import StyleSheetLoader
 from qtharmony.src.config import UI_RESOURCES
 
+from qtharmony.src.core.theme import ThemeManager
+
 from typing import Optional
 import os.path
 
@@ -46,6 +48,8 @@ class MainWindow(QMainWindow):
         """ 
 
         super().__init__(parent)
+
+        ThemeManager.add_widgets(self)
 
         if widget is not None: self.setCentralWidget(widget)
         self.setWindowIcon(QIcon(f"{os.path.join(UI_RESOURCES, 'Icon.png')}"))

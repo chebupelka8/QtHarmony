@@ -1,0 +1,5 @@
+{
+    "MainWindow": "QMainWindow#main-window:active{background-color: #252525; border: none; border-radius: none;}",
+    "PushButton": "QPushButton#button:active{background-color: #405cf5; border: none; border-radius: 6px;}\nQPushButton#button:hover{background-color: #3045B8;}\nQPushButton#button:pressed{background-color: #283A9A;}",
+    "DropDownMenu": "QComboBox#drop-down-menu:active{background-color: #ffffff; color: #1A3B5D; border: 1px solid #adb5bd; border-radius: 6px;}\nQComboBox#drop-down-menu:hover{background-color: 6185DF;}\nQComboBox#drop-down-menu QAbstractItemView{background-color: #ffffff;}\nQComboBox#drop-down-menu::drop-down{border: none;}"
+}

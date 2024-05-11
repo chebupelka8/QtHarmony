@@ -30,5 +30,28 @@
         ":pressed": {
             "background-color": "#283A9A"
         }
+    },
+
+    "DropDownMenu": {
+        "object-name": "QComboBox#drop-down-menu",
+
+        ":active": {
+            "background-color": "#ffffff",
+            "color": "#1A3B5D",
+            "border": "1px solid #adb5bd",
+            "border-radius": "6px"
+        },
+
+        ":hover": {
+            "background-color": "6185DF"
+        },
+
+        " QAbstractItemView": {
+            "background-color": "#ffffff"
+        },
+
+        "::drop-down": {
+            "border": "none"
+        }
     }
 }
