@@ -18,10 +18,8 @@ class Window(QWidget):
         self.widgetsList = WidgetsList()
 
         self.mainLayout = QHBoxLayout()
-        self.mainLayout.addWidget(CheckBox("Hello"))
-        self.mainLayout.addWidget(DigitalEntry())
-        self.mainLayout.addWidget(PushButton("Button"))
-        self.mainLayout.addWidget(DropDownMenu([str(i) for i in range(100)]))
+        self.mainLayout.addWidget(PathEntry())
+        self.mainLayout.addWidget(PushButton())
 
         self.setLayout(self.mainLayout)
 
