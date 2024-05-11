@@ -2,13 +2,27 @@ from PySide6.QtWidgets import QMainWindow, QWidget
 from PySide6.QtGui import QIcon
 
 from qtharmony.src.core import StyleSheetLoader
-from qtharmony.src.util import RESOURCES
+from qtharmony.src.config import UI_RESOURCES
 
 from typing import Optional
 import os.path
 
 
 class MainWindow(QMainWindow):
+    """
+    Custom QMainWindow widget for main window functionality.
+
+    Methods:
+    - __init__(widget: Optional[QWidget] = None, size: tuple[int, int] = (1000, 600),
+              title: Optional[str] = None, is_resizable: bool = True,
+              *, stylesheet: Optional[str] = None, parent: Optional[QWidget] = None): None
+              - Initializes the MainWindow widget with optional central widget, size, title, resizable option, and stylesheet.
+    
+    - run(): None
+              - Displays the main window.
+
+    """
+
     def __init__(
             self, 
             widget: Optional[QWidget] = None,
@@ -19,10 +33,22 @@ class MainWindow(QMainWindow):
             stylesheet: Optional[str] = None,
             parent: Optional[QWidget] = None
     ) -> None:
+        """
+        Initializes the MainWindow widget with optional central widget, size, title, resizable option, and stylesheet.
+
+        Args:
+            widget (Optional[QWidget], optional): The central widget to set in the main window. Defaults to None.
+            size (tuple[int, int], optional): The size of the main window (width, height). Defaults to (1000, 600).
+            title (Optional[str], optional): The title of the main window. Defaults to None.
+            is_resizable (bool, optional): Flag to set if the main window is resizable. Defaults to True.
+            stylesheet (Optional[str], optional): Custom stylesheet for the main window. Defaults to None.
+            parent (Optional[QWidget], optional): Parent widget of the main window. Defaults to None.
+        """ 
+
         super().__init__(parent)
 
         if widget is not None: self.setCentralWidget(widget)
-        self.setWindowIcon(QIcon(f"{os.path.join(RESOURCES, 'ui/Icon.png')}"))
+        self.setWindowIcon(QIcon(f"{os.path.join(UI_RESOURCES, 'Icon.png')}"))
         
         self.setObjectName("main-window")
         self.setStyleSheet(StyleSheetLoader.load_stylesheet(

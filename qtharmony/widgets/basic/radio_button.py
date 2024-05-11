@@ -2,7 +2,6 @@ from PySide6.QtWidgets import QRadioButton
 from PySide6.QtCore import QSize
 
 from qtharmony.src.core import StyleSheetLoader
-from qtharmony.src.util import RESOURCES
 
 from typing import Optional, TYPE_CHECKING
 if TYPE_CHECKING:

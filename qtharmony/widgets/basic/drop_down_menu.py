@@ -4,7 +4,7 @@ from PySide6.QtWidgets import QComboBox
 from PySide6.QtCore import Qt, QSize
 
 from qtharmony.src.core import StyleSheetLoader
-from qtharmony.src.util import RESOURCES
+from qtharmony.src.config import UI_RESOURCES
 
 from typing import Optional, TYPE_CHECKING
 if TYPE_CHECKING:
@@ -71,7 +71,7 @@ class DropDownMenu(QComboBox):
 
         down_arrow = (
             "\nDropDownMenu::down-arrow {" 
-            + f"image: url({os.path.join(RESOURCES, 'ui/angle-down.png')})" 
+            + f"image: url({os.path.join(UI_RESOURCES, 'angle-down.png')})" 
             + "}"
         )
 
