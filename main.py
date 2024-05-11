@@ -8,8 +8,6 @@ from qtharmony.widgets import *
 from qtharmony.windows import MainWindow
 from qtharmony.constructor import Initialization
 
-from qtharmony.src.core.theme import ThemeBuilder, ThemeManager
-
 Initialization.init(sys.argv)
 
 
@@ -20,7 +18,8 @@ class Window(QWidget):
         self.widgetsList = WidgetsList()
 
         self.mainLayout = QHBoxLayout()
-        self.mainLayout.addWidget(Entry())
+        self.mainLayout.addWidget(CheckBox("Hello"))
+        self.mainLayout.addWidget(DigitalEntry())
         self.mainLayout.addWidget(PushButton("Button"))
         self.mainLayout.addWidget(DropDownMenu([str(i) for i in range(100)]))
 
@@ -29,7 +28,6 @@ class Window(QWidget):
 
 if __name__ == "__main__":
     window = MainWindow(Window())
-    ThemeManager.update()
-    window.show()
+    window.run()
 
     Initialization.exec()

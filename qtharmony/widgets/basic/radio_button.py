@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QRadioButton
 from PySide6.QtCore import QSize
 
 from qtharmony.src.core import StyleSheetLoader
+from qtharmony.src.core.theme import ThemeManager
 
 from typing import Optional, TYPE_CHECKING
 if TYPE_CHECKING:
@@ -37,6 +38,7 @@ class RadioButton(QRadioButton):
         """ 
 
         super().__init__(parent)
+        ThemeManager.add_widgets(self)
 
         if text is not None: self.setText(text)
         self.setFixedSize(QSize(*size))

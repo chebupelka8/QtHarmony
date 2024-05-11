@@ -72,5 +72,70 @@
         ":focus": {
             "border-color": "#405cf5"
         }
+    },
+
+    "DigitalEntry": {
+        "object-name": "QSpinBox#digital-entry",
+
+        ":active": {
+            "color": "#1A3B5D",
+            "background-color": "#ffffff",
+            "border": "1px solid #adb5bd",
+            "border-radius": "6px"
+        },
+
+        ":hover": {
+            "border-color": "#6185DF"
+        },
+
+        ":focus": {
+            "border-color": "#405cf5"
+        }
+    }, 
+
+    "RadioButton": {
+        "object-name": "QRadioButton#radio-button",
+
+        ":active": {
+            "color": "#ffffff"
+        },
+
+        "::indicator": {
+            "border": "1px solid #0166fc",
+            "border-radius": "7px"
+        },
+
+        "::indicator:checked": {
+            "background-color": "#0166fc"
+        }
+    },
+
+    "CheckBox": {
+        "object-name": "QCheckBox#check-box",
+
+        ":active": {
+            "color": "#ffffff"
+        },
+
+        "::indicator": {
+            "border": "1px solid #0166fc",
+            "border-radius": "3px"
+        },
+
+        "::indicator:checked:enabled": {
+            "background-color": "#0166fc"
+        },
+
+        "::indicator:checked:disabled": {
+            "background-color": "lightgray"
+        },
+
+        ":disabled": {
+            "color": "gray"
+        },
+
+        "::indicator:disabled": {
+            "border-color": "gray"
+        }
     }
 }

@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QSpinBox
 from PySide6.QtCore import QSize
 
 from qtharmony.src.core import StyleSheetLoader
+from qtharmony.src.core.theme import ThemeManager
 
 from typing import Optional, TYPE_CHECKING
 if TYPE_CHECKING:
@@ -43,6 +44,7 @@ class DigitalEntry(QSpinBox):
         """
 
         super().__init__(parent)
+        ThemeManager.add_widgets(self)
 
         self.setFixedSize(QSize(*size))
         if not include_buttons: self.setButtonSymbols(QSpinBox.ButtonSymbols.NoButtons)
