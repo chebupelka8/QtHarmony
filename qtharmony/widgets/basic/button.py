@@ -1,15 +1,13 @@
 from PySide6.QtWidgets import QPushButton
 from PySide6.QtCore import QSize
 
-from qtharmony.src.core import Loader, StyleSheetLoader
+from qtharmony.src.core import StyleSheetLoader
 
 from typing import Optional, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from PySide6.QtWidgets import QWidget
     from PySide6.QtGui import QFont
-
-import os.path
 
 
 class PushButton(QPushButton):
