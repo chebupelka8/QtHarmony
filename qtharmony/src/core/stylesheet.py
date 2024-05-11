@@ -21,3 +21,16 @@ class StyleSheetLoader:
             )
         else:
             return Loader.load_file(stylesheet_path)
+    
+    @staticmethod
+    def append_stylesheet(
+        default_stylesheet: str,
+        *additional: str,
+        name: str, obj_name: str
+    ) -> str:
+        result = default_stylesheet
+
+        for stylesheet in additional:
+            result += "\n" + stylesheet.replace(name, obj_name) + "\n"
+        
+        return result

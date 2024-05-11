@@ -5,5 +5,6 @@ from .basic.switchers import (
     Entry, DropDownMenu, DigitalEntry, 
     CheckBox, PathEntry, Splitter, RadioButton
 )
+from .basic.label import Label
 
 from .basic.groups import GroupBox

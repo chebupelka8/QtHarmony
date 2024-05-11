@@ -18,6 +18,7 @@ class Window(QWidget):
         self.widgetsList = WidgetsList()
 
         self.mainLayout = QHBoxLayout()
+        self.mainLayout.addWidget(Label("Hello", "Noto Sans", 13))
         self.mainLayout.addWidget(PushButton("Button"))
         self.mainLayout.addWidget(DropDownMenu([str(i) for i in range(100)]))
 
