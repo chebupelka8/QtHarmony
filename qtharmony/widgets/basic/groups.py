@@ -4,9 +4,8 @@ from PySide6.QtWidgets import (
     QGroupBox, QButtonGroup
 )
 
-from qtharmony.src.core import Loader, StyleSheetLoader
-
-import os.path
+from qtharmony.src.core import StyleSheetLoader
+from qtharmony.src.core.theme import ThemeManager 
 
 if TYPE_CHECKING:
     from PySide6.QtWidgets import QWidget
@@ -24,6 +23,7 @@ class GroupBox(QGroupBox):
     def __init__(
             self,
             title: Optional[str] = None,
+            size: tuple[int, int] = (400, 200),
             *,
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
@@ -38,6 +38,7 @@ class GroupBox(QGroupBox):
         """
 
         super().__init__(parent)
+        ThemeManager.add_widgets(self)
 
         self.setObjectName("group-box")
         self.setStyleSheet(StyleSheetLoader.load_stylesheet(
@@ -47,3 +48,4 @@ class GroupBox(QGroupBox):
         ))
 
         if title is not None: self.setTitle(title)
+        self.setFixedSize(*size)

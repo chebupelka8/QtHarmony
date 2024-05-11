@@ -139,11 +139,32 @@
         }
     }, 
 
+    "GroupBox": {
+        "object-name": "QGroupBox#group-box",
+
+        "": {
+            "background-color": "#323232",
+            "border-radius": "6px",
+            "border": "none"
+        },
+
+        "::title": {
+            "color": "#ffffff",
+            "background-color": "#404040",
+            "border-radius": "6px",
+            "subcontrol-position": "top",
+            "margin-top": "5px",
+            "min-height": "30px",
+            "padding-left": "20px",
+            "padding-right": "20px"
+        }
+    },
+
     "PathEntry": {
         "object-name": "QWidget#path-entry",
 
         "": {
-            
+
         }
     }
 }
