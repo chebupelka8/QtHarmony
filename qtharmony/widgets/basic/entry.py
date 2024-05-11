@@ -11,10 +11,12 @@ if TYPE_CHECKING:
 
 class Entry(QLineEdit):
     """
-    Custom QLineEdit widget for text entry.
+    Custom QLineEdit widget for text input.
 
     Methods:
-    - __init__(__placed: str, placeholder: str = "", width: int = 200, height: int = 25): None - Initializes the text entry with default text and placeholder.
+    - __init__(placed: Optional[str] = None, placeholder: Optional[str] = None, size: tuple[int, int] = (200, 30),
+              font: Optional["QFont"] = None, *, stylesheet: Optional[str] = None, parent: Optional["QWidget"] = None): None
+              - Initializes the Entry widget with optional text, placeholder, size, font, and stylesheet.
     """
 
     def __init__(
@@ -27,6 +29,18 @@ class Entry(QLineEdit):
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
     ) -> None:
+        """
+        Initializes the Entry widget with optional text, placeholder, size, font, and stylesheet.
+
+        Args:
+            placed (Optional[str], optional): The initial text to be displayed in the entry. Defaults to None.
+            placeholder (Optional[str], optional): The placeholder text to be displayed when the entry is empty. Defaults to None.
+            size (tuple[int, int], optional): The size of the entry widget (width, height). Defaults to (200, 30).
+            font (Optional["QFont"], optional): The font to be used for text input. Defaults to None.
+            stylesheet (Optional[str], optional): Custom stylesheet for the entry widget. Defaults to None.
+            parent (Optional["QWidget"], optional): Parent widget of the entry. Defaults to None.
+        """
+
         super().__init__(parent)
 
         if placed is not None: self.setText(placed)

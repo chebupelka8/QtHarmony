@@ -11,10 +11,13 @@ if TYPE_CHECKING:
 
 class DigitalEntry(QSpinBox):
     """
-    Custom QSpinBox widget for entering digital values.
+    Custom QSpinBox widget for numerical input.
 
     Methods:
-    - __init__(__range: tuple[int, int], width: int = 30, height: int = 25, show_buttons: bool = False): None - Initializes the digital entry with a specified range, width, height, and button display.
+    - __init__(range: tuple[int, int] = (0, 100), size: tuple[int, int] = (40, 30),
+              font: Optional["QFont"] = None, include_buttons: bool = False,
+              *, stylesheet: Optional[str] = None, parent: Optional["QWidget"] = None): None
+              - Initializes the DigitalEntry widget with optional range, size, font, button inclusion, and stylesheet.
     """
 
     def __init__(
@@ -27,6 +30,18 @@ class DigitalEntry(QSpinBox):
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
     ) -> None:
+        """
+        Initializes the DigitalEntry widget with optional range, size, font, button inclusion, and stylesheet.
+
+        Args:
+            range (tuple[int, int], optional): The range of values allowed in the spin box. Defaults to (0, 100).
+            size (tuple[int, int], optional): The size of the spin box widget (width, height). Defaults to (40, 30).
+            font (Optional["QFont"], optional): The font to be used for text input. Defaults to None.
+            include_buttons (bool, optional): Flag to include or exclude spin box buttons. Defaults to False.
+            stylesheet (Optional[str], optional): Custom stylesheet for the spin box widget. Defaults to None.
+            parent (Optional["QWidget"], optional): Parent widget of the spin box. Defaults to None.
+        """
+
         super().__init__(parent)
 
         self.setFixedSize(QSize(*size))

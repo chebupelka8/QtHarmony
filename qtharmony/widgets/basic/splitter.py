@@ -24,6 +24,15 @@ class Splitter(QSplitter):
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
     ) -> None:
+        """
+        Initializes the Splitter instance with the specified orientation.
+
+        Args:
+            __orientation (str): The orientation of the splitter, either "horizontal" or "vertical".
+            stylesheet (Optional[str], optional): Custom stylesheet for the splitter. Defaults to None.
+            parent (Optional["QWidget"], optional): Parent widget of the splitter. Defaults to None.
+        """
+
         if __orientation == "horizontal": super().__init__(Qt.Orientation.Horizontal, parent)
         elif __orientation == "vertical": super().__init__(Qt.Orientation.Vertical, parent)
 
@@ -35,6 +44,13 @@ class Splitter(QSplitter):
         ))
 
     def addWidget(self, widget):
+        """
+        Adds a widget to the splitter and sets it as non-collapsible.
+
+        Args:
+            widget (QWidget): The widget to be added to the splitter.
+        """
+
         super().addWidget(widget)
         self.setCollapsible(self.indexOf(widget), False)
 

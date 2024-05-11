@@ -13,6 +13,14 @@ if TYPE_CHECKING:
 
 
 class GroupBox(QGroupBox):
+    """
+    Custom QGroupBox widget for grouping widgets.
+
+    Methods:
+    - __init__(title: Optional[str] = None, *, stylesheet: Optional[str] = None, parent: Optional["QWidget"] = None): None
+              - Initializes the GroupBox widget with optional title and stylesheet.
+    """
+
     def __init__(
             self,
             title: Optional[str] = None,
@@ -20,6 +28,15 @@ class GroupBox(QGroupBox):
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
     ) -> None:
+        """
+        Initializes the GroupBox widget with optional title and stylesheet.
+
+        Args:
+            title (Optional[str], optional): The title of the group box. Defaults to None.
+            stylesheet (Optional[str], optional): Custom stylesheet for the group box widget. Defaults to None.
+            parent (Optional["QWidget"], optional): Parent widget of the group box. Defaults to None.
+        """
+
         super().__init__(parent)
 
         self.setObjectName("group-box")

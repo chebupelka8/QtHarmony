@@ -9,6 +9,16 @@ if TYPE_CHECKING:
 
 
 class CheckBox(QCheckBox):
+    """
+    Custom QCheckBox widget for checkbox functionality.
+
+    Methods:
+    - __init__(text: Optional[str] = None, size: tuple[int, int] = (150, 30),
+              is_checkable: bool = True, is_checked: bool = False, is_disabled: bool = False,
+              *, stylesheet: Optional[str] = None, parent: Optional["QWidget"] = None): None
+              - Initializes the CheckBox widget with optional text, size, checkability, checked state, disabled state, and stylesheet.
+    """
+
     def __init__(
             self,
             text: Optional[str] = None,
@@ -20,6 +30,19 @@ class CheckBox(QCheckBox):
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
     ) -> None:
+        """
+        Initializes the CheckBox widget with optional text, size, checkability, checked state, disabled state, and stylesheet.
+
+        Args:
+            text (Optional[str], optional): The text displayed next to the checkbox. Defaults to None.
+            size (tuple[int, int], optional): The size of the checkbox widget (width, height). Defaults to (150, 30).
+            is_checkable (bool, optional): Flag to enable/disable checkbox functionality. Defaults to True.
+            is_checked (bool, optional): Flag to set the initial checked state of the checkbox. Defaults to False.
+            is_disabled (bool, optional): Flag to set the initial disabled state of the checkbox. Defaults to False.
+            stylesheet (Optional[str], optional): Custom stylesheet for the checkbox widget. Defaults to None.
+            parent (Optional["QWidget"], optional): Parent widget of the checkbox. Defaults to None.
+        """
+
         super().__init__(parent)
 
         self.setFixedSize(QSize(*size))

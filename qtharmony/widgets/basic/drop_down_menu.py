@@ -14,11 +14,15 @@ if TYPE_CHECKING:
 
 class DropDownMenu(QComboBox):
     """
-    Custom QComboBox widget for displaying a drop-down menu.
+    Custom QComboBox widget for a drop-down menu.
 
     Methods:
-    - __init__(*__values: str, width: int = 200, height: int = 25): None - Initializes the drop-down menu with specified values, width, and height.
-    - set_items(*__values: str): None - Sets the items in the drop-down menu.
+    - __init__(values: Optional[list[str]] = None, size: tuple[int, int] = (200, 30),
+              font: Optional["QFont"] = None, *, stylesheet: Optional[str] = None,
+              parent: Optional["QWidget"] = None): None
+              - Initializes the DropDownMenu widget with optional values, size, font, and stylesheet.
+    - set_items(*__values: str) -> None
+              - Sets the items in the drop-down menu with the provided values.
     """
 
     def __init__(
@@ -30,6 +34,17 @@ class DropDownMenu(QComboBox):
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
     ) -> None:
+        """
+        Initializes the DropDownMenu widget with optional values, size, font, and stylesheet.
+
+        Args:
+            values (Optional[list[str]], optional): List of values to populate the drop-down menu. Defaults to None.
+            size (tuple[int, int], optional): The size of the drop-down menu widget (width, height). Defaults to (200, 30).
+            font (Optional["QFont"], optional): The font to be used for the drop-down menu. Defaults to None.
+            stylesheet (Optional[str], optional): Custom stylesheet for the drop-down menu widget. Defaults to None.
+            parent (Optional["QWidget"], optional): Parent widget of the drop-down menu. Defaults to None.
+        """
+
         super().__init__(parent)
 
         self.setFixedSize(QSize(*size))
@@ -50,6 +65,10 @@ class DropDownMenu(QComboBox):
         self.__load_down_arrow_style()
     
     def __load_down_arrow_style(self) -> None:
+        """
+        Loads the custom style for the drop-down arrow in the DropDownMenu widget.
+        """
+
         down_arrow = (
             "\nDropDownMenu::down-arrow {" 
             + f"image: url({os.path.join(RESOURCES, 'ui/angle-down.png')})" 
@@ -62,6 +81,13 @@ class DropDownMenu(QComboBox):
         ))
 
     def set_items(self, *__values: str) -> None:
+        """
+        Sets the items in the drop-down menu with the provided values.
+
+        Args:
+            *__values (str): Variable number of values to populate the drop-down menu.
+        """
+    
         self.__values = [*__values]
         self.addItems(self.__values)
 
