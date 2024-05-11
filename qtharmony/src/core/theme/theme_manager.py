@@ -42,7 +42,11 @@ class ThemeManager:
         data = ThemeBuilder.build_theme(cls.get_theme_by_name(cls.__current_theme))
 
         for widget in cls.__widgets:
-            widget.setStyleSheet(data[widget.__class__.__name__] + widget.styleSheet())
+            try:
+                widget.setStyleSheet(data[widget.__class__.__name__] + widget.styleSheet())
+            
+            except KeyError:
+                ...
             
             # print(widget.styleSheet())
             # print("\n\n\n----------------\n\n\n")
