@@ -84,4 +84,4 @@ if __name__ == "__main__":
     Initialization.exec()
 ```
 
-<img src="examples/buttons/default_button.png>
+<img src="examples/buttons/default_button.png">
