@@ -4,9 +4,9 @@ from PySide6.QtWidgets import (
 
 import sys
 
-from modernqqt.widgets import *
-from modernqqt.windows import MainWindow
-from modernqqt.constructor import Initialization
+from qtharmony.widgets import *
+from qtharmony.windows import MainWindow
+from qtharmony.constructor import Initialization
 
 Initialization.init(sys.argv)
 

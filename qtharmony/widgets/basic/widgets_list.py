@@ -6,7 +6,7 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import Qt
 
-from modernqqt.src.core import Loader
+from qtharmony.src.core import Loader
 
 import os.path
 

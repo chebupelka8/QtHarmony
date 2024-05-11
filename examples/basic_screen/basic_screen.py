@@ -1,5 +1,5 @@
-from modernqqt.constructor import Initialization
-from modernqqt.windows import MainWindow
+from qtharmony.constructor import Initialization
+from qtharmony.windows import MainWindow
 
 import sys
 

@@ -8,8 +8,8 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import Qt, QSize
 
-from modernqqt.src.core import Loader, FileDialog, StyleSheetLoader
-from modernqqt.src.util import RESOURCES
+from qtharmony.src.core import Loader, FileDialog, StyleSheetLoader
+from qtharmony.src.util import RESOURCES
 
 from .button import PushButton
 

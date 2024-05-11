@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import QPushButton
 from PySide6.QtCore import QSize
 
-from modernqqt.src.core import Loader, StyleSheetLoader
+from qtharmony.src.core import Loader, StyleSheetLoader
 
 from typing import Optional, TYPE_CHECKING
 

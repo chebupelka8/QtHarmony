@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QLabel
 
-from modernqqt.src.core import Font
+from qtharmony.src.core import Font
 
 from typing import Optional, TYPE_CHECKING
 

@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import QApplication
 
 from typing import Optional
-from modernqqt.src.core.exceptions import NotInitializedError
+from qtharmony.src.core.exceptions import NotInitializedError
 
 
 class Initialization:

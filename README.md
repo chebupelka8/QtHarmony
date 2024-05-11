@@ -5,25 +5,28 @@
 
 <p align="center">
 
-  <img alt="PyPI - Version" src="https://img.shields.io/pypi/v/ModernQQt">
-  <img src="https://img.shields.io/github/license/chebupelka8/ModernQQt">
-  <img src="https://img.shields.io/github/commit-activity/t/chebupelka8/ModernQQt"> 
-  <img src="https://img.shields.io/github/stars/chebupelka8/ModernQQt">
-  <img src="https://img.shields.io/github/watchers/chebupelka8/ModernQQt">
+  <img alt="PyPI - Version" src="https://img.shields.io/pypi/v/QtHarmony">
+  <img src="https://img.shields.io/github/license/chebupelka8/QtHarmony">
+  <img src="https://img.shields.io/github/commit-activity/t/chebupelka8/QtHarmony"> 
+  <img src="https://img.shields.io/github/stars/chebupelka8/QtHarmony">
+  <img src="https://img.shields.io/github/watchers/chebupelka8/QtHarmony">
   
 </p>
 
-<b>ModernQt</b>: A Cutting-Edge GUI Library Built on PyQt6 ModernQt is a intuitive graphical user interface (GUI) library designed to simplify the development of modern, visually stunning, and highly functional applications. Built on the robust foundation of PyQt6. Now ModernQt is in development.
+<b>QtHarmony</b> - is a Cutting-Edge GUI Library Built on PyQt6 QtHarmony 
+is a intuitive graphical user interface (GUI) library designed 
+to simplify the development of modern, visually stunning, and highly functional applications. 
+Built on the robust foundation of PyQt6. Now QtHarmony is in development.
 
 <h3>How to use</h3>
 
 ```sh
-pip install ModernQQt
+pip install QtHarmony
 ```
 
 ```python
-from modernqqt.constructor import Initialization
-from modernqqt.widgets import ...
+from qtharmony.constructor import Initialization
+from qtharmony.widgets import ...
 ...
 ```
 
@@ -31,8 +34,8 @@ from modernqqt.widgets import ...
 <h4>Basic screen</h4>
 
 ```python
-from modernqqt.constructor import Initialization
-from modernqqt.windows import MainWindow
+from qtharmony.constructor import Initialization
+from qtharmony.windows import MainWindow
 
 import sys
 

@@ -4,7 +4,7 @@ from PySide6.QtWidgets import (
     QGroupBox, QButtonGroup
 )
 
-from modernqqt.src.core import Loader, StyleSheetLoader
+from qtharmony.src.core import Loader, StyleSheetLoader
 
 import os.path
 

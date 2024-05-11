@@ -1,6 +1,8 @@
-from PySide6.QtWidgets import QMainWindow, QWidget, QApplication
+from PySide6.QtWidgets import QMainWindow, QWidget
+from PySide6.QtGui import QIcon
 
-from modernqqt.src.core import Loader, StyleSheetLoader
+from qtharmony.src.core import StyleSheetLoader
+from qtharmony.src.util import RESOURCES
 
 from typing import Optional
 import os.path
@@ -20,6 +22,7 @@ class MainWindow(QMainWindow):
         super().__init__(parent)
 
         if widget is not None: self.setCentralWidget(widget)
+        self.setWindowIcon(QIcon(f"{os.path.join(RESOURCES, 'ui/Icon.png')}"))
         
         self.setObjectName("main-window")
         self.setStyleSheet(StyleSheetLoader.load_stylesheet(
@@ -30,7 +33,7 @@ class MainWindow(QMainWindow):
 
         self.resize(*size)
         if title is not None: self.setWindowTitle(title)
-        else: self.setWindowTitle("ModernQQt")
+        else: self.setWindowTitle("QtHarmony")
 
         if not is_resizable: self.setFixedSize(*size)
     
