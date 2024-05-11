@@ -48,7 +48,6 @@ class MainWindow(QMainWindow):
         """ 
 
         super().__init__(parent)
-
         ThemeManager.add_widgets(self)
 
         if widget is not None: self.setCentralWidget(widget)

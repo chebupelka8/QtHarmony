@@ -7,13 +7,13 @@ import json
 
 
 class ThemeBuilder:
-    
+
     @classmethod
     def build_theme(cls, __path: str) -> dict:
         return cls.__to_css(Loader.load_theme(__path))
     
     @classmethod
-    def __to_css(cls, theme: dict) -> dict:
+    def __to_css(cls, theme: dict) -> dict: 
         result = {}
 
         for widget in theme.keys():
@@ -27,7 +27,7 @@ class ThemeBuilder:
                     theme[widget][attr], object_name, attr
                 ))
             
-            result[widget] = "\n".join(stylesheet_elements)
+            result[widget] = "\n".join(stylesheet_elements) + "\n"
         
         return result
 

@@ -6,6 +6,8 @@ from PySide6.QtCore import Qt, QSize
 from qtharmony.src.core import StyleSheetLoader
 from qtharmony.src.config import UI_RESOURCES
 
+from qtharmony.src.core.theme import ThemeManager
+
 from typing import Optional, TYPE_CHECKING
 if TYPE_CHECKING:
     from PySide6.QtGui import QFont
@@ -46,6 +48,7 @@ class DropDownMenu(QComboBox):
         """
 
         super().__init__(parent)
+        ThemeManager.add_widgets(self)
 
         self.setFixedSize(QSize(*size))
         self.view().setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)

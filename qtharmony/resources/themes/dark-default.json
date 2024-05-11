@@ -10,7 +10,7 @@
         ":active": {
             "background-color": "#252525",
             "border": "none",
-            "border-radius": "none"
+            "border-radius": "0px"
         }
     },
 
@@ -43,7 +43,7 @@
         },
 
         ":hover": {
-            "background-color": "6185DF"
+            "border-color": "#6185DF"
         },
 
         " QAbstractItemView": {
@@ -52,6 +52,25 @@
 
         "::drop-down": {
             "border": "none"
+        }
+    },
+
+    "Entry": {
+        "object-name": "QLineEdit#entry",
+
+        ":active": {
+            "border": "1px solid #adb5bd",
+            "background-color": "#ffffff",
+            "color": "#1A3B5D",
+            "border-radius": "6px"
+        },
+
+        ":hover": {
+            "border-color": "#6185DF"
+        },
+
+        ":focus": {
+            "border-color": "#405cf5"
         }
     }
 }

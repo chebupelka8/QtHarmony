@@ -20,18 +20,16 @@ class Window(QWidget):
         self.widgetsList = WidgetsList()
 
         self.mainLayout = QHBoxLayout()
-        self.mainLayout.addWidget(Label("Hello", "Noto Sans", 13))
+        self.mainLayout.addWidget(Entry())
         self.mainLayout.addWidget(PushButton("Button"))
         self.mainLayout.addWidget(DropDownMenu([str(i) for i in range(100)]))
 
         self.setLayout(self.mainLayout)
 
-        print(ThemeManager.get_widgets())
-        ThemeManager.update()
-
 
 if __name__ == "__main__":
     window = MainWindow(Window())
+    ThemeManager.update()
     window.show()
 
     Initialization.exec()

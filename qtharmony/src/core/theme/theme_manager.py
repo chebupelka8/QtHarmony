@@ -40,14 +40,15 @@ class ThemeManager:
     @classmethod
     def update(cls) -> None:
         data = ThemeBuilder.build_theme(cls.get_theme_by_name(cls.__current_theme))
-        
-        #### need to remove :->
-        with open("test.json", "w", encoding="utf-8") as file:
-            json.dump(data, file, indent=4, ensure_ascii=False)
-        ####
 
         for widget in cls.__widgets:
-            print(data[widget.__class__.__name__])
+            widget.setStyleSheet(data[widget.__class__.__name__] + widget.styleSheet())
+            
+            # print(widget.styleSheet())
+            # print("\n\n\n----------------\n\n\n")
+            # print(widget.styleSheet())
+
+            # print(data[widget.__class__.__name__])
 
     @classmethod
     def add_widgets(cls, *__widgets: "QWidget") -> None:
