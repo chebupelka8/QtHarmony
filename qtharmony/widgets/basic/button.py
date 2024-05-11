@@ -54,7 +54,7 @@ class PushButton(QPushButton):
         ))
         
         self.setObjectName("button")
-        self.setMinimumSize(QSize(*size))
+        self.setFixedSize(QSize(*size))
 
         if text is not None:
             self.setText(text)
