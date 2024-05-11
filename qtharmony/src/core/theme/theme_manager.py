@@ -16,6 +16,11 @@ class ThemeManager:
     __widgets: list["QWidget"] = []
     __current_theme: str = "Dark-Default" 
 
+    @classmethod
+    def change_theme(cls, __name: str) -> None:
+        cls.__current_theme = __name
+        cls.update()
+
     @staticmethod
     def get_all_themes() -> list[str]:
         res: list[str] = []
@@ -43,7 +48,7 @@ class ThemeManager:
 
         for widget in cls.__widgets:
             try:
-                widget.setStyleSheet(data[widget.__class__.__name__] + widget.styleSheet())
+                widget.setStyleSheet(data[widget.__class__.__name__])
             
             except KeyError:
                 ...
