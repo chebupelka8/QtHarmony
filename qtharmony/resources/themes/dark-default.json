@@ -1,0 +1,34 @@
+{
+    "Info": {
+        "name": "Dark-Default",
+        "author": null
+    },
+
+    "MainWindow": {
+        "object-name": "QMainWindow#main-window",
+        
+        ":active": {
+            "background-color": "#252525",
+            "border": "none",
+            "border-radius": "none"
+        }
+    },
+
+    "PushButton": {
+        "object-name": "QPushButton#button",
+
+        ":active": {
+            "background-color": "#405cf5",
+            "border": "none",
+            "border-radius": "6px"
+        },
+
+        ":hover": {
+            "background-color": "#3045B8"
+        },
+
+        ":pressed": {
+            "background-color": "#283A9A"
+        }
+    }
+}

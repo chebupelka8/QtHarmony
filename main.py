@@ -8,6 +8,8 @@ from qtharmony.widgets import *
 from qtharmony.windows import MainWindow
 from qtharmony.constructor import Initialization
 
+from qtharmony.src.core.theme import ThemeBuilder
+
 Initialization.init(sys.argv)
 
 
@@ -16,6 +18,8 @@ class Window(QWidget):
         super().__init__()
 
         self.widgetsList = WidgetsList()
+
+        ThemeBuilder("qtharmony/resources/themes/dark-default.json")
 
         self.mainLayout = QHBoxLayout()
         self.mainLayout.addWidget(Label("Hello", "Noto Sans", 13))
