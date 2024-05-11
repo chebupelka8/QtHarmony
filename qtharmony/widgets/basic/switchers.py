@@ -8,7 +8,7 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import Qt, QSize
 
-from qtharmony.src.core import Loader, FileDialog, StyleSheetLoader
+from qtharmony.src.core import FileDialog, StyleSheetLoader
 from qtharmony.src.util import RESOURCES
 
 from .button import PushButton
@@ -78,25 +78,25 @@ class DropDownMenu(QComboBox):
         self.setObjectName("drop-down-menu")
         if font is not None: self.setFont(font)
 
-        stylesheet = self.__load_down_arrow_style(stylesheet)
-
         self.setStyleSheet(StyleSheetLoader.load_stylesheet(
             __file__, "styles/drop_down_menu.css", 
             name="DropDownMenu", obj_name="QComboBox#drop-down-menu",
             stylesheet=stylesheet
         ))
+
+        self.__load_down_arrow_style()
     
-    def __load_down_arrow_style(self, stylesheet: Optional[str]) -> str:
+    def __load_down_arrow_style(self) -> None:
         down_arrow = (
             "\nDropDownMenu::down-arrow {" 
             + f"image: url({os.path.join(RESOURCES, 'ui/angle-down.png')})" 
             + "}"
         )
 
-        if stylesheet is not None: stylesheet += down_arrow
-        else: stylesheet = down_arrow
-
-        return stylesheet
+        self.setStyleSheet(StyleSheetLoader.append_stylesheet(
+            self.styleSheet(), down_arrow, 
+            name="DropDownMenu", obj_name="QComboBox#drop-down-menu"
+        ))
 
     def set_items(self, *__values: str) -> None:
         self.__values = [*__values]

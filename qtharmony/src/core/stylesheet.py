@@ -24,13 +24,15 @@ class StyleSheetLoader:
     
     @staticmethod
     def append_stylesheet(
-        default_stylesheet: str,
-        *additional: str,
+        default_stylesheet: Optional[str],
+        additional: str,
         name: str, obj_name: str
     ) -> str:
-        result = default_stylesheet
+        
+        result = ""
+        if default_stylesheet is not None:
+            result = default_stylesheet
 
-        for stylesheet in additional:
-            result += "\n" + stylesheet.replace(name, obj_name) + "\n"
+        result += "\n" + additional.replace(name, obj_name) + "\n"
         
         return result
