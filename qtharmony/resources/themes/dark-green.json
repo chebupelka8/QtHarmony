@@ -173,7 +173,8 @@
         "": {
             "background-color": "#1a1a1a",
             "border-radius": "6px",
-            "border": "1px solid #006400"
+            "border": "1px solid #006400",
+            "padding": "10px"
         },
     
         "::title": {

@@ -14,7 +14,7 @@ if TYPE_CHECKING:
 
 class ThemeManager:
     __widgets: list["QWidget"] = []
-    __current_theme: str = "Dark-Default" 
+    __current_theme: str = os.path.join(THEME_RESOURCES, "dark-default.json") 
 
     @classmethod
     def change_theme(cls, __name: str) -> None:
