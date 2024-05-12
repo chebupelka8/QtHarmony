@@ -11,7 +11,7 @@ from qtharmony.src.core.theme import ThemeManager
 
 
 Initialization.init(sys.argv)
-
+ThemeManager.change_theme("Light-Default")
 
 
 class Window(QWidget):
