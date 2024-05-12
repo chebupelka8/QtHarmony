@@ -1,0 +1,213 @@
+{
+    "Info": {
+        "name": "Dark-Green",
+        "author": null
+    },
+
+    "MainWindow": {
+        "object-name": "QMainWindow#main-window",
+        
+        "": {
+            "background-color": "#1a1a1a",
+            "border": "none",
+            "border-radius": "0px"
+        }
+    },
+    
+    "PushButton": {
+        "object-name": "QPushButton#button",
+    
+        "": {
+            "background-color": "#006400",
+            "border": "none",
+            "border-radius": "6px",
+            "color": "#ffffff"
+        },
+    
+        ":hover": {
+            "background-color": "#008000"
+        },
+    
+        ":pressed": {
+            "background-color": "#00a000"
+        },
+    
+        ":disabled": {
+            "background-color": "#333333",
+            "color": "#666666"
+        }
+    },
+    
+    "DropDownMenu": {
+        "object-name": "QComboBox#drop-down-menu",
+    
+        "": {
+            "background-color": "#333333",
+            "color": "#ffffff",
+            "border": "1px solid #006400",
+            "border-radius": "6px"
+        },
+    
+        ":hover": {
+            "border-color": "#00b300"
+        },
+    
+        " QAbstractItemView": {
+            "background-color": "#333333"
+        },
+    
+        "::drop-down": {
+            "border": "none"
+        },
+    
+        ":disabled": {
+            "background-color": "#333333",
+            "color": "#666666"
+        }
+    },
+    
+    "Entry": {
+        "object-name": "QLineEdit#entry",
+    
+        "": {
+            "border": "1px solid #006400",
+            "background-color": "#333333",
+            "color": "#ffffff",
+            "border-radius": "6px"
+        },
+    
+        ":hover": {
+            "border-color": "#00b300"
+        },
+    
+        ":focus": {
+            "border-color": "#008000"
+        },
+    
+        ":disabled": {
+            "background-color": "#333333",
+            "color": "#666666"
+        }
+    },
+    
+    "DigitalEntry": {
+        "object-name": "QSpinBox#digital-entry",
+    
+        "": {
+            "color": "#ffffff",
+            "background-color": "#333333",
+            "border": "1px solid #006400",
+            "border-radius": "6px"
+        },
+    
+        ":hover": {
+            "border-color": "#00b300"
+        },
+    
+        ":focus": {
+            "border-color": "#008000"
+        }
+    }, 
+    
+    "RadioButton": {
+        "object-name": "QRadioButton#radio-button",
+    
+        "": {
+            "color": "#ffffff"
+        },
+    
+        "::indicator": {
+            "border": "1px solid #00b300",
+            "border-radius": "7px"
+        },
+    
+        "::indicator:checked:enabled": {
+            "background-color": "#00b300"
+        },
+    
+        "::indicator:checked:disabled": {
+            "background-color": "#666666"
+        },
+    
+        ":disabled": {
+            "color": "#666666"
+        },
+    
+        "::indicator:disabled": {
+            "border-color": "#666666"
+        }
+    },
+    
+    "CheckBox": {
+        "object-name": "QCheckBox#check-box",
+    
+        "": {
+            "color": "#ffffff"
+        },
+    
+        "::indicator": {
+            "border": "1px solid #00b300",
+            "border-radius": "3px"
+        },
+    
+        "::indicator:checked:enabled": {
+            "background-color": "#00b300"
+        },
+    
+        "::indicator:checked:disabled": {
+            "background-color": "#666666"
+        },
+    
+        ":disabled": {
+            "color": "#666666"
+        },
+    
+        "::indicator:disabled": {
+            "border-color": "#666666"
+        }
+    }, 
+    
+    "GroupBox": {
+        "object-name": "QGroupBox#group-box",
+    
+        "": {
+            "background-color": "#1a1a1a",
+            "border-radius": "6px",
+            "border": "1px solid #006400"
+        },
+    
+        "::title": {
+            "color": "#ffffff",
+            "background-color": "#333333",
+            "border-radius": "0",
+            "subcontrol-position": "top center",
+            "min-height": "30px",
+            "padding-left": "20px",
+            "padding-right": "20px",
+            "border-top": "1px solid #006400"
+        }
+    },
+    
+    "Frame": {
+        "object-name": "Frame#frame",
+    
+        "": {
+            "background-color": "#1a1a1a",
+            "border-radius": "6px",
+            "border": "1px solid #006400"
+        }
+    },
+    
+    "Label": {
+        "object-name": "QLabel#label",
+    
+        "": {
+            "color": "#ffffff"
+        }
+    },
+    
+    "Splitter": {
+        "object-name": "QSplitter#splitter"
+    }
+    
+}
