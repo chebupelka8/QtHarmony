@@ -24,6 +24,8 @@ class Window(QWidget):
         group.addWidget(RadioButton("RadioButton 1"))
         group.addWidget(RadioButton("RadioButton 2"))
         group.addWidget(RadioButton("RadioButton 3"))
+
+        self.mainLayout.addWidget(PushButton("Button"))
         
         self.mainLayout.addWidget(group)
 

@@ -18,33 +18,41 @@ class ThemeManager:
 
     @classmethod
     def change_theme(cls, __name: str) -> None:
-        cls.__current_theme = __name
+        cls.__current_theme = cls.get_theme_by_name(__name)
         cls.update()
 
     @staticmethod
-    def get_all_themes() -> list[str]:
-        res: list[str] = []
+    def get_all_themes() -> dict[str, str]:
+        res: dict[str, str] = {}
 
         for theme in os.listdir(THEME_RESOURCES):
-            res.append(os.path.join(THEME_RESOURCES, theme))
+            path = os.path.join(THEME_RESOURCES, theme)
+            data = Loader.load_json(path)
+            res[data["Info"]["name"]] = path
         
         return res
     
     @classmethod
     def get_theme_by_name(cls, __name: str) -> str:
-        for theme in cls.get_all_themes():
+        data = cls.get_all_themes()
+
+        for theme in data.keys():
             try:
-                if Loader.load_json(theme)["Info"]["name"] == __name:
-                    return theme
+                if theme == __name:
+                    return data[theme]
             
             except json.decoder.JSONDecodeError:
                 ...
         
         raise FileExistsError(f"There is no such theme: {__name}")
+
+    @classmethod
+    def load_theme(cls, __path: str) -> None:
+        cls.__current_theme = __path
     
     @classmethod
     def update(cls) -> None:
-        data = ThemeBuilder.build_theme(cls.get_theme_by_name(cls.__current_theme))
+        data = ThemeBuilder.build_theme(cls.__current_theme)
 
         for widget in cls.__widgets:
             try:
