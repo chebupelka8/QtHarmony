@@ -53,6 +53,21 @@ if __name__ == "__main__":
 
 <img src="examples/basic_screen/basic_screen.png">
 
+<h4>To change theme</h4>
+
+```python
+from qtharmony.widgets import *
+from qtharmony.windows import MainWindow
+from qtharmony.constructor import Initialization
+from qtharmony.src.core.theme import ThemeManager
+
+
+Initialization.init(sys.argv)
+ThemeManager.change_theme("Dark-Green")
+
+...
+```
+
 <h4>Button</h4>
 
 ```python
