@@ -78,10 +78,10 @@ class DropDownMenu(QComboBox):
             + "}"
         )
 
-        self.setStyleSheet(StyleSheetLoader.append_stylesheet(
-            self.styleSheet(), down_arrow, 
+        self.stylesheet = StyleSheetLoader.append_stylesheet(
+            self.stylesheet, down_arrow, 
             name="DropDownMenu", obj_name="QComboBox#drop-down-menu"
-        ))
+        )
 
     def set_items(self, *__values: str) -> None:
         """

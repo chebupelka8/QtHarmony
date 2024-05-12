@@ -1,7 +1,7 @@
 from typing import Optional, TYPE_CHECKING
-
 from PySide6.QtWidgets import (
-    QGroupBox, QButtonGroup
+    QGroupBox, QButtonGroup,
+    QHBoxLayout, QVBoxLayout, QLayout
 )
 
 from qtharmony.src.core import StyleSheetLoader
@@ -9,6 +9,20 @@ from qtharmony.src.core.theme import ThemeManager
 
 if TYPE_CHECKING:
     from PySide6.QtWidgets import QWidget
+
+
+def copy_method(source_class, method_name):
+    
+    def decorator(target_class):
+    
+        def wrapper(self, *args, **kwargs):
+            source_method = getattr(source_class, method_name)
+            return source_method(self, *args, **kwargs)
+    
+        setattr(target_class, method_name, wrapper)
+        return target_class
+    
+    return decorator
 
 
 class GroupBox(QGroupBox):
@@ -24,6 +38,7 @@ class GroupBox(QGroupBox):
             self,
             title: Optional[str] = None,
             size: tuple[int, int] = (400, 200),
+            orientation: str = "vertical",
             *,
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
@@ -49,3 +64,18 @@ class GroupBox(QGroupBox):
 
         if title is not None: self.setTitle(title)
         self.setFixedSize(*size)
+
+        if orientation == "vertical": self.mainLayout = QVBoxLayout()
+        elif orientation == "horizontal": self.mainLayout = QHBoxLayout()
+        else: raise ValueError("Invalid orientation. should be use 'vertical' or 'horizontal'.")
+
+        self.setLayout(self.mainLayout)
+    
+    def addWidget(self, *args, **kwargs) -> None:
+        self.mainLayout.addWidget(*args, **kwargs)
+    
+    def addLayout(self, *args, **kwargs) -> None:
+        self.mainLayout.addLayout(*args, **kwargs)
+    
+    def addItem(self, *args, **kwargs) -> None:
+        self.mainLayout.addItem(*args, **kwargs)

@@ -7,6 +7,7 @@ from .basic.drop_down_menu import DropDownMenu
 from .basic.entry import Entry
 from .basic.radio_button import RadioButton
 from .basic.path_entry import PathEntry
+from .basic.frame import Frame
 
 from .basic.label import Label
 from .basic.splitter import Splitter

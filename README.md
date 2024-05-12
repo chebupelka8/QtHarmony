@@ -85,3 +85,6 @@ if __name__ == "__main__":
 ```
 
 <img src="examples/buttons/default_button.png">
+
+<h3>Other Examples</h3>
+<img src="examples/groupbox/group_box.png">

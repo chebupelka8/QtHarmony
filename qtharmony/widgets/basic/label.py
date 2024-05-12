@@ -30,7 +30,7 @@ class Label(QLabel):
             font_size: int,
             bold: bool = False,
             italic: bool = False,
-            color: str = "#000000",
+            color: Optional[str] = None,
             word_wrap: bool = False,
             *,
             stylesheet: Optional[str] = None,
@@ -62,12 +62,10 @@ class Label(QLabel):
         )
 
         self.setText(text)
-        self.set_color(color)
+        if color is not None: self.set_color(color)
         
         self.setWordWrap(word_wrap)
         self.setFont(Font.get_system_font(font_family, font_size, bold, italic))
-
-        print(self.stylesheet)
     
     def set_color(self, color: str) -> None:
         """

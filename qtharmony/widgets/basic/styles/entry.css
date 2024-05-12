@@ -2,3 +2,7 @@ QLineEdit#entry {
     outline: none;
     padding: 5px;
 }
+
+QLineEdit#entry::placeholder {
+    color: green;
+}

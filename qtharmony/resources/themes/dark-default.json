@@ -29,6 +29,11 @@
 
         ":pressed": {
             "background-color": "#283A9A"
+        },
+
+        ":disabled": {
+            "background-color": "gray",
+            "color": "lightgray"
         }
     },
 
@@ -36,9 +41,9 @@
         "object-name": "QComboBox#drop-down-menu",
 
         "": {
-            "background-color": "#ffffff",
+            "background-color": "#fbfbfb",
             "color": "#1A3B5D",
-            "border": "1px solid #adb5bd",
+            "border": "none",
             "border-radius": "6px"
         },
 
@@ -47,11 +52,16 @@
         },
 
         " QAbstractItemView": {
-            "background-color": "#ffffff"
+            "background-color": "#fbfbfb"
         },
 
         "::drop-down": {
             "border": "none"
+        },
+
+        ":disabled": {
+            "background-color": "gray",
+            "color": "lightgray"
         }
     },
 
@@ -59,8 +69,8 @@
         "object-name": "QLineEdit#entry",
 
         "": {
-            "border": "1px solid #adb5bd",
-            "background-color": "#ffffff",
+            "border": "none",
+            "background-color": "#fbfbfb",
             "color": "#1A3B5D",
             "border-radius": "6px"
         },
@@ -71,6 +81,11 @@
 
         ":focus": {
             "border-color": "#405cf5"
+        },
+
+        ":disabled": {
+            "background-color": "gray",
+            "color": "lightgray"
         }
     },
 
@@ -79,7 +94,7 @@
 
         "": {
             "color": "#1A3B5D",
-            "background-color": "#ffffff",
+            "background-color": "#fbfbfb",
             "border": "1px solid #adb5bd",
             "border-radius": "6px"
         },
@@ -97,7 +112,7 @@
         "object-name": "QRadioButton#radio-button",
 
         "": {
-            "color": "#ffffff"
+            "color": "#fbfbfb"
         },
 
         "::indicator": {
@@ -105,8 +120,20 @@
             "border-radius": "7px"
         },
 
-        "::indicator:checked": {
+        "::indicator:checked:enabled": {
             "background-color": "#0166fc"
+        },
+
+        "::indicator:checked:disabled": {
+            "background-color": "lightgray"
+        },
+
+        ":disabled": {
+            "color": "gray"
+        },
+
+        "::indicator:disabled": {
+            "border-color": "gray"
         }
     },
 
@@ -114,7 +141,7 @@
         "object-name": "QCheckBox#check-box",
 
         "": {
-            "color": "#ffffff"
+            "color": "#fbfbfb"
         },
 
         "::indicator": {
@@ -149,7 +176,7 @@
         },
 
         "::title": {
-            "color": "#ffffff",
+            "color": "#fbfbfb",
             "background-color": "#404040",
             "border-radius": "6px",
             "subcontrol-position": "top",
@@ -157,6 +184,24 @@
             "min-height": "30px",
             "padding-left": "20px",
             "padding-right": "20px"
+        }
+    },
+
+    "Frame": {
+        "object-name": "Frame#frame",
+
+        "": {
+            "background-color": "#323232",
+            "border-radius": "6px",
+            "border": "none"
+        }
+    },
+
+    "Label": {
+        "object-name": "QLabel#label",
+
+        "": {
+            "color": "#fbfbfb"
         }
     },
 
