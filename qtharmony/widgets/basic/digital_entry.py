@@ -53,9 +53,8 @@ class DigitalEntry(QSpinBox):
         self.setObjectName("digital-entry")
         self.setRange(*range)
 
-        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+        self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/digital_entry.css", 
             name="DigitalEntry", obj_name="QSpinBox#digital-entry",
             stylesheet=stylesheet
-        ))
-
+        )

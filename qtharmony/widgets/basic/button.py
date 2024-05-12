@@ -49,11 +49,11 @@ class PushButton(QPushButton):
 
         if font is not None: self.setFont(font)
 
-        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+        self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/button.css", 
             name="PushButton", obj_name="QPushButton#button",
             stylesheet=stylesheet
-        ))
+        )
         
         self.setObjectName("button")
         self.setFixedSize(QSize(*size))

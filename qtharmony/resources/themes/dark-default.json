@@ -160,11 +160,7 @@
         }
     },
 
-    "PathEntry": {
-        "object-name": "QWidget#path-entry",
-
-        "": {
-
-        }
+    "Splitter": {
+        "object-name": "QSplitter#splitter"
     }
 }

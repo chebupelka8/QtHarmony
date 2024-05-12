@@ -53,9 +53,8 @@ class Entry(QLineEdit):
         self.setObjectName("entry")
         self.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
 
-        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+        self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/entry.css", 
             name="Entry", obj_name="QLineEdit#entry",
             stylesheet=stylesheet
-        ))
-
+        )

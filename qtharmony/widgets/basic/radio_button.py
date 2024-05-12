@@ -44,8 +44,8 @@ class RadioButton(QRadioButton):
         self.setFixedSize(QSize(*size))
 
         self.setObjectName("radio-button")
-        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+        self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/radio_button.css", 
             name="RadioButton", obj_name="QRadioButton#radio-button",
             stylesheet=stylesheet
-        ))
+        )

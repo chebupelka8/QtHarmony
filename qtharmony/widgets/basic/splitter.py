@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QSplitter
 from PySide6.QtCore import Qt
 
 from qtharmony.src.core import StyleSheetLoader
+from qtharmony.src.core.theme import ThemeManager
 
 from typing import Optional, TYPE_CHECKING
 if TYPE_CHECKING:
@@ -36,12 +37,14 @@ class Splitter(QSplitter):
         if __orientation == "horizontal": super().__init__(Qt.Orientation.Horizontal, parent)
         elif __orientation == "vertical": super().__init__(Qt.Orientation.Vertical, parent)
 
+        ThemeManager.add_widgets(self)
+
         self.setObjectName("splitter")
-        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+        self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/splitter.css", 
             name="Splitter", obj_name="QSplitter#splitter",
             stylesheet=stylesheet
-        ))
+        )
 
     def addWidget(self, widget):
         """

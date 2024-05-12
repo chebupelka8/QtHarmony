@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import QLabel
 
 from qtharmony.src.core import Font, StyleSheetLoader
+from qtharmony.src.core.theme import ThemeManager
 
 from typing import Optional, TYPE_CHECKING
 
@@ -51,19 +52,22 @@ class Label(QLabel):
         """
 
         super().__init__(parent)
+        ThemeManager.add_widgets(self)
 
         self.setObjectName("label")
-        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+        self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/label.css", 
             name="Label", obj_name="QLabel#label",
             stylesheet=stylesheet
-        ))
+        )
 
         self.setText(text)
         self.set_color(color)
         
         self.setWordWrap(word_wrap)
         self.setFont(Font.get_system_font(font_family, font_size, bold, italic))
+
+        print(self.stylesheet)
     
     def set_color(self, color: str) -> None:
         """
@@ -73,16 +77,8 @@ class Label(QLabel):
             color (str): The color of the label text.
         """
 
-        self.__append_stylesheet("Label {" + f"color: {color}" + "}")
-    
-    def __append_stylesheet(self, stylesheet: str) -> None:
-        """
-        Appends a custom stylesheet to the label widget.
-
-        Args:
-            stylesheet (str): The custom stylesheet to be appended.
-        """
-
-        self.setStyleSheet(StyleSheetLoader.append_stylesheet(
-            self.styleSheet(), stylesheet, name="Label", obj_name="QLabel#label"
-        ))
+        self.stylesheet = StyleSheetLoader.append_stylesheet(
+            self.stylesheet, 
+            "Label {" + f"color: {color}" + "}",
+            "Label", "QLabel#label", reversed=True
+        )

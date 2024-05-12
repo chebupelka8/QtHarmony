@@ -56,9 +56,8 @@ class CheckBox(QCheckBox):
         if text is not None:
             self.setText(text)
         
-        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+        self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/check_box.css", 
             name="CheckBox", obj_name="CheckBox#check-box",
             stylesheet=stylesheet
-        ))
-
+        )

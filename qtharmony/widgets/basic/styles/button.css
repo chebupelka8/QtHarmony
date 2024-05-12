@@ -1,4 +1,4 @@
-QPushButton#button:active {
+QPushButton#button {
     padding: 5px;
     outline: none;
 }

@@ -6,7 +6,6 @@ from PySide6.QtWidgets import (
 )
 
 from qtharmony.src.core import FileDialog, StyleSheetLoader
-from qtharmony.src.core.theme import ThemeManager
 
 from .button import PushButton
 from .entry import Entry
@@ -53,7 +52,6 @@ class PathEntry(QWidget):
         """        
 
         super().__init__(parent)
-        ThemeManager.add_widgets(self)
 
         self.setObjectName("path-entry")
         if font is not None: self.setFont(font)

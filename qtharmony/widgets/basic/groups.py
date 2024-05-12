@@ -41,11 +41,11 @@ class GroupBox(QGroupBox):
         ThemeManager.add_widgets(self)
 
         self.setObjectName("group-box")
-        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+        self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/group_box.css", 
             name="GroupBox", obj_name="QGroupBox#group-box",
             stylesheet=stylesheet
-        ))
+        )
 
         if title is not None: self.setTitle(title)
         self.setFixedSize(*size)

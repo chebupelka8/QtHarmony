@@ -19,7 +19,10 @@ class Window(QWidget):
         super().__init__()
 
         self.mainLayout = QHBoxLayout()
-        btn = PushButton("Click to change theme", size=(200, 35))
+
+        self.mainLayout.addWidget(Label("Hello", "Noto Sans", 14, color="#000", stylesheet="Label {color: blue}"))
+
+        btn = PushButton("Click to change theme", size=(200, 35), stylesheet="PushButton {background-color: lightgreen}")
         btn.clicked.connect(lambda: ThemeManager.change_theme("Light-Default"))
 
         self.mainLayout.addWidget(btn)

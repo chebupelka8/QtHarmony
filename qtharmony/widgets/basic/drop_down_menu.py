@@ -59,11 +59,11 @@ class DropDownMenu(QComboBox):
         self.setObjectName("drop-down-menu")
         if font is not None: self.setFont(font)
 
-        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+        self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/drop_down_menu.css", 
             name="DropDownMenu", obj_name="QComboBox#drop-down-menu",
             stylesheet=stylesheet
-        ))
+        )
 
         self.__load_down_arrow_style()
     

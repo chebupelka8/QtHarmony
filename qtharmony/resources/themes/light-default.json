@@ -20,7 +20,8 @@
         "": {
             "background-color": "#405cf5",
             "border": "none",
-            "border-radius": "6px"
+            "border-radius": "6px",
+            "color": "black"
         },
 
         ":hover": {

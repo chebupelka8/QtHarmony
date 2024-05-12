@@ -54,11 +54,11 @@ class MainWindow(QMainWindow):
         self.setWindowIcon(QIcon(f"{os.path.join(UI_RESOURCES, 'Icon.png')}"))
         
         self.setObjectName("main-window")
-        self.setStyleSheet(StyleSheetLoader.load_stylesheet(
+        self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/main_window.css", 
             name="MainWindow", obj_name="QMainWindow#main-window",
             stylesheet=stylesheet
-        ))
+        )
 
         self.resize(*size)
         if title is not None: self.setWindowTitle(title)
