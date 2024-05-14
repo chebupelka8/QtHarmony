@@ -9,9 +9,11 @@ from qtharmony.windows import MainWindow
 from qtharmony.constructor import Initialization
 from qtharmony.src.core.theme import ThemeManager
 
+from custom_widget import TextBox
+
 
 Initialization.init(sys.argv)
-ThemeManager.change_theme("Dark-Green")
+# ThemeManager.change_theme("Dark-Green")
 
 
 class Window(QWidget):
@@ -19,6 +21,7 @@ class Window(QWidget):
         super().__init__()
 
         self.mainLayout = QHBoxLayout()
+        self.mainLayout.addWidget(TextBox())
 
         group = GroupBox("GroupBox")
         group.addWidget(RadioButton("RadioButton 1"))

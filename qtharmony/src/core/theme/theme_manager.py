@@ -56,10 +56,15 @@ class ThemeManager:
 
         for widget in cls.__widgets:
             try:
-                widget.setStyleSheet(data[widget.__class__.__name__] + widget.stylesheet)  # type: ignore
+                if hasattr(widget, "stylesheet"):
+                    widget.setStyleSheet(data[widget.__class__.__name__] + widget.stylesheet)  # type: ignore
+                
+                else:
+                    widget.setStyleSheet(data[widget.__class__.__name__])
             
             except KeyError:
-                widget.setStyleSheet(widget.stylesheet)  # type: ignore
+                if hasattr(widget, "stylesheet"):
+                    widget.setStyleSheet(widget.stylesheet)  # type: ignore
 
     @classmethod
     def add_widgets(cls, *__widgets: "QWidget") -> None:
