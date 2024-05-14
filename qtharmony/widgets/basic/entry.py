@@ -27,6 +27,7 @@ class Entry(QLineEdit):
             size: Optional[tuple[int, int]] = None, 
             font: Optional["QFont"] = None, 
             *,
+            object_name: str = "entry",
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
     ) -> None:
@@ -50,11 +51,11 @@ class Entry(QLineEdit):
         if font is not None: self.setFont(font)
         if size is not None: self.setFixedSize(*size)
 
-        self.setObjectName("entry")
+        self.setObjectName(object_name)
         self.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
 
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/entry.css", 
-            name=self.__class__.__name__, obj_name="QLineEdit#entry",
+            name=self.__class__.__name__, obj_name=f"QLineEdit#{self.objectName()}",
             stylesheet=stylesheet
         )

@@ -24,6 +24,7 @@ class RadioButton(QRadioButton):
             text: Optional[str] = None,
             size: Optional[tuple[int, int]] = None,
             *,
+            object_name: str = "radio-button",
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
     ) -> None:
@@ -43,9 +44,9 @@ class RadioButton(QRadioButton):
         if text is not None: self.setText(text)
         if size is not None: self.setFixedSize(*size)
 
-        self.setObjectName("radio-button")
+        self.setObjectName(object_name)
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/radio_button.css", 
-            name=self.__class__.__name__, obj_name="QRadioButton#radio-button",
+            name=self.__class__.__name__, obj_name=f"QRadioButton#{self.objectName()}",
             stylesheet=stylesheet
         )

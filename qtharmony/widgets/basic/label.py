@@ -33,6 +33,7 @@ class Label(QLabel):
             color: Optional[str] = None,
             word_wrap: bool = False,
             *,
+            object_name: str = "label",
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
     ) -> None:
@@ -54,10 +55,10 @@ class Label(QLabel):
         super().__init__(parent)
         ThemeManager.add_widgets(self)
 
-        self.setObjectName("label")
+        self.setObjectName(object_name)
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/label.css", 
-            name=self.__class__.__name__, obj_name="QLabel#label",
+            name=self.__class__.__name__, obj_name=f"QLabel#{self.objectName()}",
             stylesheet=stylesheet
         )
 

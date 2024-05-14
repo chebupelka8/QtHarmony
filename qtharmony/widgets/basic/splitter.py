@@ -22,6 +22,7 @@ class Splitter(QSplitter):
             self, 
             __orientation: str,
             *,
+            object_name: str = "splitter",
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
     ) -> None:
@@ -39,10 +40,10 @@ class Splitter(QSplitter):
 
         ThemeManager.add_widgets(self)
 
-        self.setObjectName("splitter")
+        self.setObjectName(object_name)
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/splitter.css", 
-            name=self.__class__.__name__, obj_name="QSplitter#splitter",
+            name=self.__class__.__name__, obj_name=f"QSplitter#{self.objectName()}",
             stylesheet=stylesheet
         )
 

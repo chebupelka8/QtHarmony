@@ -28,6 +28,7 @@ class CheckBox(QCheckBox):
             is_checked: bool = False,
             is_disabled: bool = False,
             *,
+            object_name: str = "check-box",
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
     ) -> None:
@@ -52,12 +53,12 @@ class CheckBox(QCheckBox):
         self.setCheckable(is_checkable)
         self.setDisabled(is_disabled)
 
-        self.setObjectName("check-box")
+        self.setObjectName(object_name)
         if text is not None:
             self.setText(text)
         
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/check_box.css", 
-            name=self.__class__.__name__, obj_name="CheckBox#check-box",
+            name=self.__class__.__name__, obj_name=f"CheckBox#{self.objectName()}",
             stylesheet=stylesheet
         )

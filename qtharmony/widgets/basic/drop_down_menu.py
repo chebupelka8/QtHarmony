@@ -33,6 +33,7 @@ class DropDownMenu(QComboBox):
             size: Optional[tuple[int, int]] = None,
             font: Optional["QFont"] = None, 
             *,
+            object_name: str = "drop-down-menu",
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
     ) -> None:
@@ -56,12 +57,12 @@ class DropDownMenu(QComboBox):
 
         if values is not None: self.__values = [*values]
         self.addItems(self.__values)
-        self.setObjectName("drop-down-menu")
+        self.setObjectName(object_name)
         if font is not None: self.setFont(font)
 
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/drop_down_menu.css", 
-            name=self.__class__.__name__, obj_name="QComboBox#drop-down-menu",
+            name=self.__class__.__name__, obj_name=f"QComboBox#{self.objectName()}",
             stylesheet=stylesheet
         )
 

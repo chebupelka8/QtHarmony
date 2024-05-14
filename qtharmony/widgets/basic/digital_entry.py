@@ -28,6 +28,7 @@ class DigitalEntry(QSpinBox):
             font: Optional["QFont"] = None, 
             include_buttons: bool = False,
             *,
+            object_name: str = "digital-entry",
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
     ) -> None:
@@ -50,11 +51,11 @@ class DigitalEntry(QSpinBox):
         if not include_buttons: self.setButtonSymbols(QSpinBox.ButtonSymbols.NoButtons)
         if font is not None: self.setFont(font)
 
-        self.setObjectName("digital-entry")
+        self.setObjectName(object_name)
         self.setRange(*range)
 
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/digital_entry.css", 
-            name=self.__class__.__name__, obj_name="QSpinBox#digital-entry",
+            name=self.__class__.__name__, obj_name=f"QSpinBox#{self.objectName()}",
             stylesheet=stylesheet
         )

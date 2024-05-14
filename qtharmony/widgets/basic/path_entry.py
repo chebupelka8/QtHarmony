@@ -36,6 +36,7 @@ class PathEntry(QWidget):
             size: Optional[tuple[int, int]] = None, 
             font: Optional["QFont"] = None, 
             *,
+            object_name: str = "path-entry",
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
     ) -> None:
@@ -53,12 +54,12 @@ class PathEntry(QWidget):
 
         super().__init__(parent)
 
-        self.setObjectName("path-entry")
+        self.setObjectName(object_name)
         if font is not None: self.setFont(font)
 
         self.setStyleSheet(StyleSheetLoader.load_stylesheet(
             __file__, "styles/path_entry.css", 
-            name=self.__class__.__name__, obj_name="QWidget#path-entry",
+            name=self.__class__.__name__, obj_name=f"QWidget#{self.objectName()}",
             stylesheet=stylesheet
         ))
 

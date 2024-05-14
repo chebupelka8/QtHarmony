@@ -40,6 +40,7 @@ class GroupBox(QGroupBox):
             size: Optional[tuple[int, int]] = None,
             orientation: str = "vertical",
             *,
+            object_name: str = "group-box",
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
     ) -> None:
@@ -55,10 +56,10 @@ class GroupBox(QGroupBox):
         super().__init__(parent)
         ThemeManager.add_widgets(self)
 
-        self.setObjectName("group-box")
+        self.setObjectName(object_name)
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/group_box.css", 
-            name=self.__class__.__name__, obj_name="QGroupBox#group-box",
+            name=self.__class__.__name__, obj_name=f"QGroupBox#{self.objectName()}",
             stylesheet=stylesheet
         )
 
