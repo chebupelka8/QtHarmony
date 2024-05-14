@@ -5,7 +5,7 @@ from PySide6.QtWidgets import (
     QSpacerItem, QSizePolicy
 )
 
-from qtharmony.src.core import FileDialog, StyleSheetLoader
+from qtharmony.core import FileDialog, StyleSheetLoader
 
 from .button import PushButton
 from .entry import Entry

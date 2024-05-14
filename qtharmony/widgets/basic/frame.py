@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import QFrame
 
-from qtharmony.src.core import StyleSheetLoader
-from qtharmony.src.core.theme import ThemeManager
+from qtharmony.core import StyleSheetLoader
+from qtharmony.core.theme import ThemeManager
 
 from typing import Optional, TYPE_CHECKING
 

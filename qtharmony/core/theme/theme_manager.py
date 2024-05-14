@@ -1,8 +1,8 @@
 import os
 import json
 
-from qtharmony.src.config import THEME_RESOURCES
-from qtharmony.src.core import Loader
+from qtharmony.config import THEME_RESOURCES
+from qtharmony.core import Loader
 
 from .theme_builder import ThemeBuilder
 

@@ -1,6 +1,6 @@
 from ..load import Loader
 
-from qtharmony.src.config import THEME_RESOURCES
+from qtharmony.config import THEME_RESOURCES
 from typing import Optional
 
 import json

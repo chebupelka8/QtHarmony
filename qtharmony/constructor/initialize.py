@@ -1,8 +1,8 @@
 from PySide6.QtWidgets import QApplication
 
 from typing import Optional
-from qtharmony.src.core.exceptions import NotInitializedError
-from qtharmony.src.core.theme import ThemeManager
+from qtharmony.core.exceptions import NotInitializedError
+from qtharmony.core.theme import ThemeManager
 
 
 class Initialization:

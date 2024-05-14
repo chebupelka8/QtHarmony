@@ -1,10 +1,9 @@
 from PySide6.QtWidgets import QMainWindow, QWidget
 from PySide6.QtGui import QIcon
 
-from qtharmony.src.core import StyleSheetLoader
-from qtharmony.src.config import UI_RESOURCES
-
-from qtharmony.src.core.theme import ThemeManager
+from qtharmony.core import StyleSheetLoader
+from qtharmony.config import UI_RESOURCES
+from qtharmony.core.theme import ThemeManager
 
 from typing import Optional
 import os.path

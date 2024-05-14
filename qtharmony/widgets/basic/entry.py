@@ -1,8 +1,8 @@
 from PySide6.QtWidgets import QLineEdit
 from PySide6.QtCore import Qt, QSize
 
-from qtharmony.src.core import StyleSheetLoader
-from qtharmony.src.core.theme import ThemeManager
+from qtharmony.core import StyleSheetLoader
+from qtharmony.core.theme import ThemeManager
 
 from typing import Optional, TYPE_CHECKING
 if TYPE_CHECKING:

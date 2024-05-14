@@ -4,8 +4,8 @@ from PySide6.QtWidgets import (
     QHBoxLayout, QVBoxLayout, QLayout
 )
 
-from qtharmony.src.core import StyleSheetLoader
-from qtharmony.src.core.theme import ThemeManager 
+from qtharmony.core import StyleSheetLoader
+from qtharmony.core.theme import ThemeManager 
 
 if TYPE_CHECKING:
     from PySide6.QtWidgets import QWidget

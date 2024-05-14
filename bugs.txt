@@ -1,5 +1,0 @@
-There is a bug in:
-when you change stylesheet as a parameter in the 
-initialization of the class, it is somehow strangely 
-prescribed (doubled), while if you remove it from ThemeManager, 
-then everything is fine.

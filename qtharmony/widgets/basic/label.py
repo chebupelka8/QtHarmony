@@ -1,7 +1,7 @@
 from PySide6.QtWidgets import QLabel
 
-from qtharmony.src.core import Font, StyleSheetLoader
-from qtharmony.src.core.theme import ThemeManager
+from qtharmony.core import Font, StyleSheetLoader
+from qtharmony.core.theme import ThemeManager
 
 from typing import Optional, TYPE_CHECKING
 
