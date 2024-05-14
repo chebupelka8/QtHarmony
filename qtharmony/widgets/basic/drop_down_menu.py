@@ -30,7 +30,7 @@ class DropDownMenu(QComboBox):
     def __init__(
             self, 
             values: Optional[list[str]] = None, 
-            size: tuple[int, int] = (200, 30),
+            size: Optional[tuple[int, int]] = None,
             font: Optional["QFont"] = None, 
             *,
             stylesheet: Optional[str] = None,
@@ -50,7 +50,7 @@ class DropDownMenu(QComboBox):
         super().__init__(parent)
         ThemeManager.add_widgets(self)
 
-        self.setFixedSize(QSize(*size))
+        if size is not None: self.setFixedSize(*size)
         self.view().setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.__values = []
 

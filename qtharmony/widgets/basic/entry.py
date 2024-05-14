@@ -24,7 +24,7 @@ class Entry(QLineEdit):
             self, 
             placed: Optional[str] = None, 
             placeholder: Optional[str] = None,
-            size: tuple[int, int] = (200, 30), 
+            size: Optional[tuple[int, int]] = None, 
             font: Optional["QFont"] = None, 
             *,
             stylesheet: Optional[str] = None,
@@ -48,8 +48,8 @@ class Entry(QLineEdit):
         if placed is not None: self.setText(placed)
         if placeholder is not None: self.setPlaceholderText(placeholder)
         if font is not None: self.setFont(font)
+        if size is not None: self.setFixedSize(*size)
 
-        self.setFixedSize(QSize(*size))
         self.setObjectName("entry")
         self.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
 

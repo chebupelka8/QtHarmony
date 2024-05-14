@@ -24,7 +24,7 @@ class DigitalEntry(QSpinBox):
     def __init__(
             self, 
             range: tuple[int, int] = (0, 100), 
-            size: tuple[int, int] = (40, 30), 
+            size: Optional[tuple[int, int]] = None, 
             font: Optional["QFont"] = None, 
             include_buttons: bool = False,
             *,
@@ -46,7 +46,7 @@ class DigitalEntry(QSpinBox):
         super().__init__(parent)
         ThemeManager.add_widgets(self)
 
-        self.setFixedSize(QSize(*size))
+        if size is not None: self.setFixedSize(*size)
         if not include_buttons: self.setButtonSymbols(QSpinBox.ButtonSymbols.NoButtons)
         if font is not None: self.setFont(font)
 

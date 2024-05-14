@@ -23,7 +23,7 @@ class CheckBox(QCheckBox):
     def __init__(
             self,
             text: Optional[str] = None,
-            size: tuple[int, int] = (150, 30),
+            size: Optional[tuple[int, int]] = None,
             is_checkable: bool = True,
             is_checked: bool = False,
             is_disabled: bool = False,
@@ -47,7 +47,7 @@ class CheckBox(QCheckBox):
         super().__init__(parent)
         ThemeManager.add_widgets(self)
 
-        self.setFixedSize(QSize(*size))
+        if size is not None: self.setFixedSize(*size)
         self.setChecked(is_checked)
         self.setCheckable(is_checkable)
         self.setDisabled(is_disabled)

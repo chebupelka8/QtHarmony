@@ -37,7 +37,7 @@ class GroupBox(QGroupBox):
     def __init__(
             self,
             title: Optional[str] = None,
-            size: tuple[int, int] = (400, 200),
+            size: Optional[tuple[int, int]] = None,
             orientation: str = "vertical",
             *,
             stylesheet: Optional[str] = None,
@@ -63,7 +63,7 @@ class GroupBox(QGroupBox):
         )
 
         if title is not None: self.setTitle(title)
-        self.setFixedSize(*size)
+        if size is not None: self.setFixedSize(*size)
 
         if orientation == "vertical": self.mainLayout = QVBoxLayout()
         elif orientation == "horizontal": self.mainLayout = QHBoxLayout()

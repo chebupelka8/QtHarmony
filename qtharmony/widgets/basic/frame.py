@@ -13,7 +13,7 @@ class Frame(QFrame):
 
     def __init__(
             self,
-            size: tuple[int, int] = (600, 400),
+            size: Optional[tuple[int, int]] = None,
             *,
             stylesheet: Optional[str] = None,
             parent: Optional["QWidget"] = None
@@ -28,5 +28,6 @@ class Frame(QFrame):
         )
         self.setObjectName("frame")
 
-        self.setFixedSize(*size)
+        if size is not None:
+            self.setFixedSize(*size)
 

@@ -33,7 +33,7 @@ class PathEntry(QWidget):
             self, 
             placed: Optional[str] = None, 
             placeholder: Optional[str] = None,
-            size: tuple[int, int] = (200, 30), 
+            size: Optional[tuple[int, int]] = None, 
             font: Optional["QFont"] = None, 
             *,
             stylesheet: Optional[str] = None,

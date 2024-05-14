@@ -26,7 +26,7 @@ class PushButton(QPushButton):
     def __init__(
             self, 
             text: Optional[str] = None,
-            size: tuple[int, int] = (100, 25),
+            size: Optional[tuple[int, int]] = None,
             font: Optional["QFont"] = None, 
             *,
             stylesheet: Optional[str] = None,
@@ -56,7 +56,7 @@ class PushButton(QPushButton):
         )
         
         self.setObjectName("button")
-        self.setFixedSize(QSize(*size))
+        if size is not None: self.setFixedSize(*size)
 
         if text is not None:
             self.setText(text)
