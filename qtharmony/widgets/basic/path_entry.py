@@ -58,7 +58,7 @@ class PathEntry(QWidget):
 
         self.setStyleSheet(StyleSheetLoader.load_stylesheet(
             __file__, "styles/path_entry.css", 
-            name="PathEntry", obj_name="QWidget#path-entry",
+            name=self.__class__.__name__, obj_name="QWidget#path-entry",
             stylesheet=stylesheet
         ))
 

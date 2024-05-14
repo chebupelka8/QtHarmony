@@ -55,6 +55,6 @@ class DigitalEntry(QSpinBox):
 
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/digital_entry.css", 
-            name="DigitalEntry", obj_name="QSpinBox#digital-entry",
+            name=self.__class__.__name__, obj_name="QSpinBox#digital-entry",
             stylesheet=stylesheet
         )

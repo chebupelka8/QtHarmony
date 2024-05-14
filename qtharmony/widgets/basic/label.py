@@ -57,7 +57,7 @@ class Label(QLabel):
         self.setObjectName("label")
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/label.css", 
-            name="Label", obj_name="QLabel#label",
+            name=self.__class__.__name__, obj_name="QLabel#label",
             stylesheet=stylesheet
         )
 

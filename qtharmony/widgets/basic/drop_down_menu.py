@@ -61,7 +61,7 @@ class DropDownMenu(QComboBox):
 
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/drop_down_menu.css", 
-            name="DropDownMenu", obj_name="QComboBox#drop-down-menu",
+            name=self.__class__.__name__, obj_name="QComboBox#drop-down-menu",
             stylesheet=stylesheet
         )
 

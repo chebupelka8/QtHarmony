@@ -55,6 +55,6 @@ class Entry(QLineEdit):
 
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/entry.css", 
-            name="Entry", obj_name="QLineEdit#entry",
+            name=self.__class__.__name__, obj_name="QLineEdit#entry",
             stylesheet=stylesheet
         )

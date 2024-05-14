@@ -46,6 +46,6 @@ class RadioButton(QRadioButton):
         self.setObjectName("radio-button")
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/radio_button.css", 
-            name="RadioButton", obj_name="QRadioButton#radio-button",
+            name=self.__class__.__name__, obj_name="QRadioButton#radio-button",
             stylesheet=stylesheet
         )

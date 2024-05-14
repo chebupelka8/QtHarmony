@@ -58,6 +58,6 @@ class CheckBox(QCheckBox):
         
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/check_box.css", 
-            name="CheckBox", obj_name="CheckBox#check-box",
+            name=self.__class__.__name__, obj_name="CheckBox#check-box",
             stylesheet=stylesheet
         )

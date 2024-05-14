@@ -51,7 +51,7 @@ class PushButton(QPushButton):
 
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/button.css", 
-            name="PushButton", obj_name="QPushButton#button",
+            name=self.__class__.__name__, obj_name="QPushButton#button",
             stylesheet=stylesheet
         )
         

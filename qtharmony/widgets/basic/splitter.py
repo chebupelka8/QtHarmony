@@ -42,7 +42,7 @@ class Splitter(QSplitter):
         self.setObjectName("splitter")
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/splitter.css", 
-            name="Splitter", obj_name="QSplitter#splitter",
+            name=self.__class__.__name__, obj_name="QSplitter#splitter",
             stylesheet=stylesheet
         )
 

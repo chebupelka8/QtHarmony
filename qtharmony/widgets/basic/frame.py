@@ -23,7 +23,7 @@ class Frame(QFrame):
 
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/button.css", 
-            name="Frame", obj_name="QFrame#frame",
+            name=self.__class__.__name__, obj_name="QFrame#frame",
             stylesheet=stylesheet
         )
         self.setObjectName("frame")

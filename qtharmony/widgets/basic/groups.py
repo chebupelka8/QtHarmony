@@ -58,7 +58,7 @@ class GroupBox(QGroupBox):
         self.setObjectName("group-box")
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/group_box.css", 
-            name="GroupBox", obj_name="QGroupBox#group-box",
+            name=self.__class__.__name__, obj_name="QGroupBox#group-box",
             stylesheet=stylesheet
         )
 
