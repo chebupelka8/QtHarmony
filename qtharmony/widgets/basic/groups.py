@@ -6,6 +6,7 @@ from PySide6.QtWidgets import (
 
 from qtharmony.core import StyleSheetLoader
 from qtharmony.core.theme import ThemeManager 
+from qtharmony.core.sizes import AbstractSize
 
 if TYPE_CHECKING:
     from PySide6.QtWidgets import QWidget
@@ -37,8 +38,9 @@ class GroupBox(QGroupBox):
     def __init__(
             self,
             title: Optional[str] = None,
-            size: Optional[tuple[int, int]] = None,
+            size: Optional[AbstractSize] = None,
             orientation: str = "vertical",
+            is_active: bool = True,
             *,
             object_name: str = "group-box",
             stylesheet: Optional[str] = None,
@@ -64,11 +66,13 @@ class GroupBox(QGroupBox):
         )
 
         if title is not None: self.setTitle(title)
-        if size is not None: self.setFixedSize(*size)
+        if size is not None: size.use(self)
 
         if orientation == "vertical": self.mainLayout = QVBoxLayout()
         elif orientation == "horizontal": self.mainLayout = QHBoxLayout()
         else: raise ValueError("Invalid orientation. should be use 'vertical' or 'horizontal'.")
+
+        self.setDisabled(not is_active)
 
         self.setLayout(self.mainLayout)
     

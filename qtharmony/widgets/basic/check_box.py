@@ -3,6 +3,7 @@ from PySide6.QtCore import QSize
 
 from qtharmony.core import StyleSheetLoader
 from qtharmony.core.theme import ThemeManager
+from qtharmony.core.sizes import AbstractSize
 
 from typing import Optional, TYPE_CHECKING
 if TYPE_CHECKING:
@@ -23,10 +24,9 @@ class CheckBox(QCheckBox):
     def __init__(
             self,
             text: Optional[str] = None,
-            size: Optional[tuple[int, int]] = None,
-            is_checkable: bool = True,
+            size: Optional[AbstractSize] = None,
             is_checked: bool = False,
-            is_disabled: bool = False,
+            is_active: bool = True,
             *,
             object_name: str = "check-box",
             stylesheet: Optional[str] = None,
@@ -48,10 +48,9 @@ class CheckBox(QCheckBox):
         super().__init__(parent)
         ThemeManager.add_widgets(self)
 
-        if size is not None: self.setFixedSize(*size)
+        if size is not None: size.use(self)
         self.setChecked(is_checked)
-        self.setCheckable(is_checkable)
-        self.setDisabled(is_disabled)
+        self.setDisabled(not is_active)
 
         self.setObjectName(object_name)
         if text is not None:

@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QFrame
 
 from qtharmony.core import StyleSheetLoader
 from qtharmony.core.theme import ThemeManager
+from qtharmony.core.sizes import AbstractSize
 
 from typing import Optional, TYPE_CHECKING
 
@@ -13,7 +14,8 @@ class Frame(QFrame):
 
     def __init__(
             self,
-            size: Optional[tuple[int, int]] = None,
+            size: Optional[AbstractSize] = None,
+            is_active: bool = True,
             *,
             object_name: str = "frame",
             stylesheet: Optional[str] = None,
@@ -29,6 +31,8 @@ class Frame(QFrame):
             stylesheet=stylesheet
         )
 
+        self.setDisabled(not is_active)
+
         if size is not None:
-            self.setFixedSize(*size)
+            size.use(self)
 

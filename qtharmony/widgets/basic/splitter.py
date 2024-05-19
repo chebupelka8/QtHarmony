@@ -3,6 +3,7 @@ from PySide6.QtCore import Qt
 
 from qtharmony.core import StyleSheetLoader
 from qtharmony.core.theme import ThemeManager
+from qtharmony.core.sizes import AbstractSize
 
 from typing import Optional, TYPE_CHECKING
 if TYPE_CHECKING:
@@ -21,6 +22,8 @@ class Splitter(QSplitter):
     def __init__(
             self, 
             __orientation: str,
+            size: Optional[AbstractSize] = None,
+            is_active: bool = True,
             *,
             object_name: str = "splitter",
             stylesheet: Optional[str] = None,
@@ -40,6 +43,9 @@ class Splitter(QSplitter):
 
         ThemeManager.add_widgets(self)
 
+        self.setDisabled(not is_active)
+        if size is not None: size.use(self)
+
         self.setObjectName(object_name)
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/splitter.css", 
@@ -47,7 +53,7 @@ class Splitter(QSplitter):
             stylesheet=stylesheet
         )
 
-    def addWidget(self, widget):
+    def addWidget(self, widget, stretch: Optional[int] = None):
         """
         Adds a widget to the splitter and sets it as non-collapsible.
 
@@ -56,5 +62,8 @@ class Splitter(QSplitter):
         """
 
         super().addWidget(widget)
-        self.setCollapsible(self.indexOf(widget), False)
+        index = self.indexOf(widget)
+
+        if stretch is not None: self.setStretchFactor(index, stretch)
+        self.setCollapsible(index, False)
 

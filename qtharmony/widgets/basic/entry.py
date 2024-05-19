@@ -1,8 +1,9 @@
 from PySide6.QtWidgets import QLineEdit
-from PySide6.QtCore import Qt, QSize
+from PySide6.QtCore import Qt
 
 from qtharmony.core import StyleSheetLoader
 from qtharmony.core.theme import ThemeManager
+from qtharmony.core.sizes import AbstractSize
 
 from typing import Optional, TYPE_CHECKING
 if TYPE_CHECKING:
@@ -24,8 +25,9 @@ class Entry(QLineEdit):
             self, 
             placed: Optional[str] = None, 
             placeholder: Optional[str] = None,
-            size: Optional[tuple[int, int]] = None, 
+            size: Optional[AbstractSize] = None,
             font: Optional["QFont"] = None, 
+            is_active: bool = True,
             *,
             object_name: str = "entry",
             stylesheet: Optional[str] = None,
@@ -49,7 +51,8 @@ class Entry(QLineEdit):
         if placed is not None: self.setText(placed)
         if placeholder is not None: self.setPlaceholderText(placeholder)
         if font is not None: self.setFont(font)
-        if size is not None: self.setFixedSize(*size)
+        if size is not None: size.use(self)
+        self.setDisabled(not is_active)
 
         self.setObjectName(object_name)
         self.setFocusPolicy(Qt.FocusPolicy.WheelFocus)

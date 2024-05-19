@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QLabel
 
 from qtharmony.core import Font, StyleSheetLoader
 from qtharmony.core.theme import ThemeManager
+from qtharmony.core.sizes import AbstractSize
 
 from typing import Optional, TYPE_CHECKING
 
@@ -31,7 +32,9 @@ class Label(QLabel):
             bold: bool = False,
             italic: bool = False,
             color: Optional[str] = None,
+            size: Optional[AbstractSize] = None,
             word_wrap: bool = False,
+            is_active: bool = True,
             *,
             object_name: str = "label",
             stylesheet: Optional[str] = None,
@@ -64,6 +67,9 @@ class Label(QLabel):
 
         self.setText(text)
         if color is not None: self.set_color(color)
+        if size is not None: size.use(self)
+
+        self.setDisabled(not is_active)
         
         self.setWordWrap(word_wrap)
         self.setFont(Font.get_system_font(font_family, font_size, bold, italic))

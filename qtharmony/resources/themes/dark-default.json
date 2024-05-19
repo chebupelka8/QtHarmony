@@ -215,5 +215,19 @@
         "": {
             "background-color": "green"
         }
+    },
+
+    "WidgetsList": {
+        "object-name": "QListWidget#widgets-list",
+
+        "": {
+            "background-color": "#404040",
+            "border-radius": "6px",
+            "border": "none"
+        }, 
+
+        "::item": {
+            "min-height": "100px"
+        }
     }
 }

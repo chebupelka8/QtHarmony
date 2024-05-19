@@ -3,6 +3,7 @@ from PySide6.QtCore import QSize
 
 from qtharmony.core import StyleSheetLoader
 from qtharmony.core.theme import ThemeManager
+from qtharmony.core.sizes import AbstractSize
 
 from typing import Optional, TYPE_CHECKING
 if TYPE_CHECKING:
@@ -24,9 +25,10 @@ class DigitalEntry(QSpinBox):
     def __init__(
             self, 
             range: tuple[int, int] = (0, 100), 
-            size: Optional[tuple[int, int]] = None, 
+            size: Optional[AbstractSize] = None,
             font: Optional["QFont"] = None, 
             include_buttons: bool = False,
+            is_active: bool = True,
             *,
             object_name: str = "digital-entry",
             stylesheet: Optional[str] = None,
@@ -47,9 +49,10 @@ class DigitalEntry(QSpinBox):
         super().__init__(parent)
         ThemeManager.add_widgets(self)
 
-        if size is not None: self.setFixedSize(*size)
+        if size is not None: size.use(self)
         if not include_buttons: self.setButtonSymbols(QSpinBox.ButtonSymbols.NoButtons)
         if font is not None: self.setFont(font)
+        self.setDisabled(not is_active)
 
         self.setObjectName(object_name)
         self.setRange(*range)

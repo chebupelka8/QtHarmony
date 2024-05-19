@@ -6,6 +6,7 @@ from PySide6.QtWidgets import (
 )
 
 from qtharmony.core import FileDialog, StyleSheetLoader
+from qtharmony.core.sizes import AbstractSize, FixedSize
 
 from .button import PushButton
 from .entry import Entry
@@ -33,8 +34,9 @@ class PathEntry(QWidget):
             self, 
             placed: Optional[str] = None, 
             placeholder: Optional[str] = None,
-            size: Optional[tuple[int, int]] = None, 
+            size: Optional[AbstractSize] = None,
             font: Optional["QFont"] = None, 
+            is_active: bool = True,
             *,
             object_name: str = "path-entry",
             stylesheet: Optional[str] = None,
@@ -56,6 +58,8 @@ class PathEntry(QWidget):
 
         self.setObjectName(object_name)
         if font is not None: self.setFont(font)
+        if size is not None: size.use(self)
+        self.setDisabled(not is_active)
 
         self.setStyleSheet(StyleSheetLoader.load_stylesheet(
             __file__, "styles/path_entry.css", 
@@ -69,7 +73,7 @@ class PathEntry(QWidget):
 
         self.pathEntry = Entry(placed, placeholder, size)
 
-        self.specifyPathBtn = PushButton("...", size=(28, 28))
+        self.specifyPathBtn = PushButton("...", size=FixedSize(28, 28))
         self.specifyPathBtn.clicked.connect(lambda: self.set_path(FileDialog.get_open_file_name()))
 
         self.mainLayout.addWidget(self.pathEntry)

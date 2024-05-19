@@ -8,10 +8,11 @@ from qtharmony.widgets import *
 from qtharmony.windows import MainWindow
 from qtharmony.constructor import Initialization
 from qtharmony.core.theme import ThemeManager
+from qtharmony.core.sizes import *
 
 
 Initialization.init(sys.argv)
-ThemeManager.change_theme("Dark-Green")
+# ThemeManager.change_theme("Dark-Green")
 
 
 class Window(QWidget):
@@ -20,14 +21,7 @@ class Window(QWidget):
 
         self.mainLayout = QHBoxLayout()
 
-        group = GroupBox("GroupBox")
-        group.addWidget(RadioButton("RadioButton 1"))
-        group.addWidget(RadioButton("RadioButton 2"))
-        group.addWidget(RadioButton("RadioButton 3"))
-
-        self.mainLayout.addWidget(PushButton("Button"))
-        
-        self.mainLayout.addWidget(group)
+        self.mainLayout.addWidget(PushButton("hello", SizeGroup(MinimalSize(height=100), MaximalSize(width=100))))
 
         self.setLayout(self.mainLayout)
 

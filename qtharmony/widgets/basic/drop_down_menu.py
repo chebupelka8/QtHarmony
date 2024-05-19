@@ -6,6 +6,7 @@ from PySide6.QtCore import Qt, QSize
 from qtharmony.core import StyleSheetLoader
 from qtharmony.config import UI_RESOURCES
 from qtharmony.core.theme import ThemeManager
+from qtharmony.core.sizes import AbstractSize
 
 from typing import Optional, TYPE_CHECKING
 if TYPE_CHECKING:
@@ -29,8 +30,9 @@ class DropDownMenu(QComboBox):
     def __init__(
             self, 
             values: Optional[list[str]] = None, 
-            size: Optional[tuple[int, int]] = None,
+            size: Optional[AbstractSize] = None,
             font: Optional["QFont"] = None, 
+            is_active: bool = True,
             *,
             object_name: str = "drop-down-menu",
             stylesheet: Optional[str] = None,
@@ -50,7 +52,7 @@ class DropDownMenu(QComboBox):
         super().__init__(parent)
         ThemeManager.add_widgets(self)
 
-        if size is not None: self.setFixedSize(*size)
+        if size is not None: size.use(self)
         self.view().setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.__values = []
 
@@ -58,6 +60,7 @@ class DropDownMenu(QComboBox):
         self.addItems(self.__values)
         self.setObjectName(object_name)
         if font is not None: self.setFont(font)
+        self.setDisabled(not is_active)
 
         self.stylesheet = StyleSheetLoader.load_stylesheet(
             __file__, "styles/drop_down_menu.css", 
