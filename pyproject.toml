@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "QtHarmony"
-version = "0.3.1"
+version = "0.3.2"
 description = ""
 authors = ["chebupelka8 <stpzamyatin@gmail.com>"]
 license = "MIT"
@@ -9,6 +9,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = ">=3.11,<3.13"
 pyside6 = "^6.7.0"
+colorama = "^0.4.6"
 
 
 [build-system]

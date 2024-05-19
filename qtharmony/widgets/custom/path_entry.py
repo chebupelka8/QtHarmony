@@ -8,8 +8,8 @@ from PySide6.QtWidgets import (
 from qtharmony.core import FileDialog, StyleSheetLoader
 from qtharmony.core.sizes import AbstractSize, FixedSize
 
-from .button import PushButton
-from .entry import Entry
+from ..basic.button import PushButton
+from ..basic.entry import Entry
 
 from typing import Optional, TYPE_CHECKING
 if TYPE_CHECKING:

@@ -17,7 +17,7 @@ class Size:
             return "Size"
         else:
             return [i for i in ("width", "height") 
-                    if not i.startswith("_") and getattr(self, i) is not None][0].capitalize()
+                    if getattr(self, i) is not None][0].capitalize()
 
     def valid_size(self) -> tuple[int]:
         return tuple(filter(
@@ -34,6 +34,9 @@ class AbstractSize(ABC):
 
 class SizeBuilder(AbstractSize):
     def __init__(self, width: Optional[int], height: Optional[int], method) -> None:
+        if width is None and height is None:
+            raise ValueError("Both arguments are None.")
+
         self.size: Size = Size(width, height)
         self.method = method
 

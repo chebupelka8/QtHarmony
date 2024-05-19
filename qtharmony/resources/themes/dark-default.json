@@ -213,7 +213,8 @@
         "object-name": "QPlainTextEdit#text-box",
 
         "": {
-            "background-color": "green"
+            "background-color": "#404040",
+            "border-radius": "6px"
         }
     },
 

@@ -1,15 +1,16 @@
 from PySide6.QtWidgets import QPushButton
+from PySide6.QtGui import QIcon
 from PySide6.QtCore import QSize
 
 from qtharmony.core import StyleSheetLoader
 from qtharmony.core.theme import ThemeManager
 from qtharmony.core.sizes import AbstractSize
 
-from typing import Optional, TYPE_CHECKING
+from typing import Optional, TYPE_CHECKING, Union
 
 if TYPE_CHECKING:
     from PySide6.QtWidgets import QWidget
-    from PySide6.QtGui import QFont
+    from PySide6.QtGui import QFont, QPixmap
 
 
 class PushButton(QPushButton):
@@ -30,6 +31,8 @@ class PushButton(QPushButton):
             size: Optional[AbstractSize] = None,
             font: Optional["QFont"] = None, 
             is_active: bool = True,
+            icon: Optional[Union[str, "QIcon", "QPixmap"]] = None,
+            icon_size: Optional[tuple[int, int]] = None,
             *,
             object_name: str = "button",
             stylesheet: Optional[str] = None,
@@ -48,6 +51,15 @@ class PushButton(QPushButton):
 
         super().__init__(parent)
         ThemeManager.add_widgets(self)
+
+        if icon is not None: 
+            if isinstance(icon, str):
+                self.setIcon(QIcon(icon))
+            else:
+                self.setIcon(icon)
+        
+        if icon_size is not None:
+            self.setIconSize(QSize(*icon_size))
 
         if font is not None: self.setFont(font)
         self.setDisabled(not is_active)

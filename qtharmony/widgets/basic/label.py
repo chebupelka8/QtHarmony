@@ -33,7 +33,7 @@ class Label(QLabel):
             italic: bool = False,
             color: Optional[str] = None,
             size: Optional[AbstractSize] = None,
-            word_wrap: bool = False,
+            wrap: bool = False,
             is_active: bool = True,
             *,
             object_name: str = "label",
@@ -71,7 +71,7 @@ class Label(QLabel):
 
         self.setDisabled(not is_active)
         
-        self.setWordWrap(word_wrap)
+        self.setWordWrap(wrap)
         self.setFont(Font.get_system_font(font_family, font_size, bold, italic))
     
     def set_color(self, color: str) -> None:
