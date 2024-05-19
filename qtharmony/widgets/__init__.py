@@ -8,10 +8,10 @@ from .basic.entry import Entry
 from .basic.radio_button import RadioButton
 from .basic.frame import Frame
 from .basic.text_box import TextBox
-
 from .basic.picture import PictureWidget
 
 from .basic.label import Label
+from .basic.scrollbar import ScrollBar
 from .basic.splitter import Splitter
 
 from .basic.groups import GroupBox

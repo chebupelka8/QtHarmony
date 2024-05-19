@@ -213,6 +213,7 @@
         "object-name": "QPlainTextEdit#text-box",
 
         "": {
+            "padding": "5px",
             "background-color": "#404040",
             "border-radius": "6px"
         }
@@ -229,6 +230,34 @@
 
         "::item": {
             "min-height": "100px"
+        }
+    },
+
+    "ScrollBar": {
+        "object-name": "QScrollBar#scroll-bar",
+
+        "": {
+            "background-color": "#404040",
+            "border-radius": "4px",
+            "width": "10px"
+        },
+        
+        ":handle": {
+            "background-color": "#525252",
+            "border-radius": "4px"
+        },
+        
+        ":handle:hover": {
+            "background-color": "#757575"
+        },
+        
+        ":handle:pressed": {
+            "background-color": "#808080"
+        },
+        
+        "::add-page, ::sub-page": {
+            "background": "#404040",
+            "border": "none"
         }
     }
 }

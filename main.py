@@ -23,7 +23,8 @@ class Window(QWidget):
 
         # self.mainLayout.addWidget(PushButton("hello", SizeGroup(MinimalSize(height=100), MaximalSize(width=100))))
         # self.mainLayout.addWidget(PictureWidget("qtharmony/resources/ui/Icon.png"))
-        self.mainLayout.addWidget(TextBox(placeholder="Type smth..."))
+        self.textbox = TextBox()
+        self.mainLayout.addWidget(self.textbox)
 
         self.setLayout(self.mainLayout)
 

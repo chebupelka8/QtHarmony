@@ -1,0 +1,43 @@
+/* QScrollBar#scroll-bar  {
+    border: none;
+    height: 10px;
+    background-color: #232323;
+    border-radius: 4px;
+}
+
+QScrollBar#scroll-bar:handle  {
+    background-color: #424242;
+    border-radius: 4px;
+}
+
+QScrollBar#scroll-bar:handle :hover {
+    background-color: #484848;
+}
+
+QScrollBar#scroll-bar:handle :pressed {
+    background-color: #525252;
+}
+
+QScrollBar#scroll-bar::sub-line {
+    border: none;
+    background: #232323;
+    width: 15px;
+    border-radius: 7px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar#scroll-bar::add-line {
+    border: none;
+    background: #232323;
+    width: 15px;
+    border-radius: 7px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar#scroll-bar::add-page ,
+QScrollBar#scroll-bar::sub-page {
+    background: #232323;
+    border: none;
+} */

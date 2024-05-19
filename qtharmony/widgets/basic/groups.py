@@ -1,7 +1,6 @@
 from typing import Optional, TYPE_CHECKING
 from PySide6.QtWidgets import (
-    QGroupBox, QButtonGroup,
-    QHBoxLayout, QVBoxLayout, QLayout
+    QGroupBox, QHBoxLayout, QVBoxLayout
 )
 
 from qtharmony.core import StyleSheetLoader

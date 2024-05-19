@@ -5,6 +5,8 @@ from qtharmony.core import StyleSheetLoader
 from qtharmony.core.theme import ThemeManager
 from qtharmony.core.sizes import AbstractSize
 
+from .scrollbar import ScrollBar
+
 from typing import Optional, TYPE_CHECKING, Union
 
 if TYPE_CHECKING:
@@ -35,6 +37,9 @@ class TextBox(QPlainTextEdit):
         if font is not None: self.setFont(font)
         self.setDisabled(not is_active)
         if not wrap: self.setLineWrapMode(QPlainTextEdit.LineWrapMode.NoWrap)
+
+        self.setVerticalScrollBar(ScrollBar("vertical"))
+        self.setHorizontalScrollBar(ScrollBar("horizontal"))
 
         self.setObjectName(object_name)
         self.stylesheet = StyleSheetLoader.load_stylesheet(
