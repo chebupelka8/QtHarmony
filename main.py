@@ -12,7 +12,7 @@ from qtharmony.core.sizes import *
 
 
 Initialization.init(sys.argv)
-# ThemeManager.change_theme("Dark-Green")
+ThemeManager.change_theme("Light-Default")
 
 
 class Window(QWidget):

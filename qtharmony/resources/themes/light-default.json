@@ -18,23 +18,22 @@
         "object-name": "QPushButton#button",
     
         "": {
-            "background-color": "#405cf5",
+            "background-color": "#f0f0f0",
             "border": "none",
-            "border-radius": "6px",
-            "color": "#ffffff"
+            "border-radius": "6px"
         },
     
         ":hover": {
-            "background-color": "#3045B8"
+            "background-color": "#d9d9d9"
         },
     
         ":pressed": {
-            "background-color": "#283A9A"
+            "background-color": "#c0c0c0"
         },
     
         ":disabled": {
-            "background-color": "#d3d3d3",
-            "color": "#a9a9a9"
+            "background-color": "lightgray",
+            "color": "gray"
         }
     },
     
@@ -42,18 +41,18 @@
         "object-name": "QComboBox#drop-down-menu",
     
         "": {
-            "background-color": "#ffffff",
+            "background-color": "#f5f5f5",
             "color": "#333333",
-            "border": "1px solid #d3d3d3",
+            "border": "none",
             "border-radius": "6px"
         },
     
         ":hover": {
-            "border-color": "#6185DF"
+            "border-color": "#b0c4de"
         },
     
         " QAbstractItemView": {
-            "background-color": "#ffffff"
+            "background-color": "#f5f5f5"
         },
     
         "::drop-down": {
@@ -61,8 +60,8 @@
         },
     
         ":disabled": {
-            "background-color": "#d3d3d3",
-            "color": "#a9a9a9"
+            "background-color": "lightgray",
+            "color": "gray"
         }
     },
     
@@ -70,23 +69,23 @@
         "object-name": "QLineEdit#entry",
     
         "": {
-            "border": "1px solid #d3d3d3",
-            "background-color": "#ffffff",
+            "border": "none",
+            "background-color": "#f5f5f5",
             "color": "#333333",
             "border-radius": "6px"
         },
     
         ":hover": {
-            "border-color": "#6185DF"
+            "border-color": "#b0c4de"
         },
     
         ":focus": {
-            "border-color": "#405cf5"
+            "border-color": "#f0f0f0"
         },
     
         ":disabled": {
-            "background-color": "#d3d3d3",
-            "color": "#a9a9a9"
+            "background-color": "lightgray",
+            "color": "gray"
         }
     },
     
@@ -95,17 +94,17 @@
     
         "": {
             "color": "#333333",
-            "background-color": "#ffffff",
-            "border": "1px solid #d3d3d3",
+            "background-color": "#f5f5f5",
+            "border": "1px solid #adb5bd",
             "border-radius": "6px"
         },
     
         ":hover": {
-            "border-color": "#6185DF"
+            "border-color": "#b0c4de"
         },
     
         ":focus": {
-            "border-color": "#405cf5"
+            "border-color": "#f0f0f0"
         }
     }, 
     
@@ -117,24 +116,24 @@
         },
     
         "::indicator": {
-            "border": "1px solid #0166fc",
+            "border": "1px solid #b0c4de",
             "border-radius": "7px"
         },
     
         "::indicator:checked:enabled": {
-            "background-color": "#0166fc"
+            "background-color": "#b0c4de"
         },
     
         "::indicator:checked:disabled": {
-            "background-color": "#d3d3d3"
+            "background-color": "lightgray"
         },
     
         ":disabled": {
-            "color": "#a9a9a9"
+            "color": "gray"
         },
     
         "::indicator:disabled": {
-            "border-color": "#a9a9a9"
+            "border-color": "gray"
         }
     },
     
@@ -146,24 +145,24 @@
         },
     
         "::indicator": {
-            "border": "1px solid #0166fc",
+            "border": "1px solid #b0c4de",
             "border-radius": "3px"
         },
     
         "::indicator:checked:enabled": {
-            "background-color": "#0166fc"
+            "background-color": "#b0c4de"
         },
     
         "::indicator:checked:disabled": {
-            "background-color": "#d3d3d3"
+            "background-color": "lightgray"
         },
     
         ":disabled": {
-            "color": "#a9a9a9"
+            "color": "gray"
         },
     
         "::indicator:disabled": {
-            "border-color": "#a9a9a9"
+            "border-color": "gray"
         }
     }, 
     
@@ -171,17 +170,17 @@
         "object-name": "QGroupBox#group-box",
     
         "": {
-            "background-color": "#f5f5f5",
+            "background-color": "#f0f0f0",
             "border-radius": "6px",
-            "border": "1px solid #d3d3d3"
+            "border": "none"
         },
     
         "::title": {
             "color": "#333333",
-            "background-color": "#e6e6e6",
+            "background-color": "#e0e0e0",
             "border-radius": "6px",
             "subcontrol-position": "top",
-            "margin-top": "0px",
+            "margin-top": "5px",
             "min-height": "30px",
             "padding-left": "20px",
             "padding-right": "20px"
@@ -192,9 +191,9 @@
         "object-name": "Frame#frame",
     
         "": {
-            "background-color": "#f5f5f5",
+            "background-color": "#f0f0f0",
             "border-radius": "6px",
-            "border": "1px solid #d3d3d3"
+            "border": "none"
         }
     },
     
@@ -208,5 +207,59 @@
     
     "Splitter": {
         "object-name": "QSplitter#splitter"
-    }    
+    },
+    
+    "TextBox": {
+        "object-name": "QPlainTextEdit#text-box",
+    
+        "": {
+            "padding": "5px",
+            "background-color": "#e0e0e0",
+            "border-radius": "6px",
+            "color": "black"
+        }
+    },
+    
+    "WidgetsList": {
+        "object-name": "QListWidget#widgets-list",
+    
+        "": {
+            "background-color": "#e0e0e0",
+            "border-radius": "6px",
+            "border": "none"
+        }, 
+    
+        "::item": {
+            "min-height": "100px"
+        }
+    },
+    
+    "ScrollBar": {
+        "object-name": "QScrollBar#scroll-bar",
+    
+        "": {
+            "background-color": "#e0e0e0",
+            "border-radius": "4px",
+            "width": "10px"
+        },
+        
+        ":handle": {
+            "background-color": "#c0c0c0",
+            "border-radius": "4px"
+        },
+        
+        ":handle:hover": {
+            "background-color": "#a0a0a0"
+        },
+        
+        ":handle:pressed": {
+            "background-color": "#808080"
+        },
+        
+        "::add-page, ::sub-page": {
+            "background": "#e0e0e0",
+            "border": "none"
+        }
+    }
+    
 }
